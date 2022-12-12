@@ -8,17 +8,20 @@ function App() {
 
   const [pokemons, setPokemons] = useState([])
 
+  useEffect(()=>{
+    getPokemon()
+}, [])
+
     const getPokemon = async () => {
         try{
-            const response = await axios.get('https://pokeapi.co/api/v2/pokemon/')
-        	console.log(response.data)
+            const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/?offset=30&limit=20`)
+        	// console.log(response.data)
+          setPokemons(response.data.results)
         } catch (error) {
             console.log(error.response)
         }}
 
-        useEffect(()=>{
-            getPokemon()
-        }, [pokemons])
+console.log(pokemons)
 
 const context = {
   pokemons,
