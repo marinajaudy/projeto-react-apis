@@ -4,12 +4,15 @@ import { Button, ChakraProvider } from '@chakra-ui/react'
 import logoPokemon from '../../assets/logoPokemon.png'
 // import setaIcon from '../../assets/setaIcon.svg'
 import {goToPokedexPage, goToHomePage} from '../../Router/coordinator'
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 // import { HomePage } from '../../Pages/HomePage/HomePage'
 
 export const Header = () => {
 
   const navigate = useNavigate()
+  // const location = useLocation()
+  // console.log(location)
+  // console.log(location.pathname === '/pokedex')
 
   return (
     <ChakraProvider>
@@ -24,7 +27,7 @@ export const Header = () => {
         onClick={()=>goToHomePage(navigate)}
         >Todos os Pokemóns</Button>
         </div> */}
-        <img src={logoPokemon} alt='Logo Pokemon'/>
+        <img src={logoPokemon} alt='Logo Pokemon' onClick={()=>goToHomePage(navigate)}/>
         <Button colorScheme='blue'
         width='17vw'
         height='8vh'

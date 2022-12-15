@@ -1,43 +1,147 @@
-import { Button } from '@chakra-ui/react'
-import React, { useEffect, useState } from 'react'
-import { ContainerCard, InfoCard, ImageButton } from './PokemonCard.styled'
+import { Button, ChakraProvider, Container } from '@chakra-ui/react'
+import React, { useEffect, useState, useContext } from 'react'
+import { InfoCard, ImageButton, TypeCard } from './PokemonCard.styled'
 import axios from 'axios'
+import pokebolaBackground from '../../assets/pokebolaFundoCard.png'
+import { typesPokemon } from '../../constants/typesPokemon'
+import { GlobalContext } from '../../contexts/GlobalContext'
+import { useLocation } from 'react-router-dom'
 
 export const PokemonCard = (props) => {
-  const {pokemon} = props
-  const [cardPokemon, setCardPokemon] = useState([])
+  const { pokemon, pokedex } = props
 
-  const getPokemonByName = async (namePokemon) => {
-    try{
-        const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${namePokemon.name}`)
-      // console.log(response.data)
-      setCardPokemon(response.data.results)
+  const context = useContext(GlobalContext)
+  const location = useLocation()
+
+  const {addPokedex} = context
+
+  const [cardPokemon, setCardPokemon] = useState({})
+  const [typeApi, setTypeApi] = useState({})
+ 
+  const getPokemonByName = async () => {
+    try {
+      const response = await axios.get(pokemon.url)
+      setCardPokemon(response.data)
+      setTypeApi(response.data.types[0].type.name)
     } catch (error) {
-        console.log(error.response)
-    }}
+      console.log(error)
+    }
+  }
 
-    useEffect(()=>{
-      getPokemonByName()
-    }, [])
-
+  useEffect(() => {
+    getPokemonByName()
+  }, [])
+  
+ 
+  const capitalizeFistLetter = (string) =>{
+    return string && string.charAt(0).toUpperCase() + string.slice(1);
+  }
+  
   return (
-    <>
-    <ContainerCard> 
-      <InfoCard>
-        <h3>#ID</h3>
-        <h2>{pokemon.name}</h2>
-        <div>
-          <Button>Type</Button>
-          <Button>Type</Button>
-        </div>
-        <Button alignSelf='flex-start'>Detalhes</Button>
-      </InfoCard>
+      <ChakraProvider>
+      {
+        location.pathname === '/' ? 
+        <Container
+            // border='2px solid red'
+            borderRadius='12px'
+            width='440px'
+            height='210px'
+            display='flex'
+            justifyContent='space-between'
+            bg={typeApi && typesPokemon[typeApi]?.color}
+            backgroundImage={pokebolaBackground}
+            backgroundRepeat='no-repeat'
+            backgroundPosition='180px'
+    >
+        <InfoCard>
+                <h3>#{cardPokemon.id}</h3>
+                <h2>{capitalizeFistLetter(cardPokemon.name)}</h2>
+                <TypeCard>
+                  {cardPokemon.types?.map((typePokemon)=>{
+                    return <img src={typesPokemon[typePokemon.type.name].image} alt='img' />
+                  })}
+                </TypeCard>
+                <Button 
+                position='absolute'
+                bottom='5px'
+                fontFamily="'Poppins', sans-serif"
+                fontSize='16px'
+                fontWeight='700'
+                textDecoration='underline'
+                padding='0px'
+                margin='0px'
+                backgroundColor='transparent'
+                >Detalhes</Button>
+              </InfoCard>
+              <ImageButton>
+                <img src={cardPokemon.sprites?.other["official-artwork"].front_default} alt='Imagem Pokémon' />
+                <Button
+                backgroundColor='#FFFFFF'
+                color='#0F0F0F'
+                width='146px'
+                height='38px'
+                position='absolute'
+                bottom='13px'
+                borderRadius='8px'
+                border= '1px dashed rgba(255, 255, 255, 0.47)'
+                onClick={()=>addPokedex(cardPokemon)}
+                >Capturar!</Button>
+              </ImageButton>
+        </Container> :
+        <div></div>
+      }
+      {
+        location.pathname === '/pokedex' ?
+        <Container
+            border='2px solid red'
+            borderRadius='12px'
+            width='440px'
+            height='210px'
+            display='flex'
+            justifyContent='space-between'
+            bg={typeApi && typesPokemon[typeApi]?.color}
+            backgroundImage={pokebolaBackground}
+            backgroundRepeat='no-repeat'
+            backgroundPosition='180px'
+    >
+        <InfoCard>
+                <h3>#{pokedex.id}</h3>
+                <h2>{capitalizeFistLetter(pokedex.name)}</h2>
+                <TypeCard>
+                  {pokedex.types?.map((typePokedex)=>{
+                    return <img src={typesPokemon[typePokedex.type.name].image} alt='img' />
+                  })}
+                </TypeCard>
+                <Button 
+                position='absolute'
+                bottom='5px'
+                fontFamily="'Poppins', sans-serif"
+                fontSize='16px'
+                fontWeight='700'
+                textDecoration='underline'
+                padding='0px'
+                margin='0px'
+                backgroundColor='transparent'
+                >Detalhes</Button>
+              </InfoCard>
+              <ImageButton>
+                <img src={pokedex.sprites?.other["official-artwork"].front_default} alt='Imagem Pokémon' />
+                <Button
+                backgroundColor='#FF6262'
+                color='#0F0F0F'
+                width='146px'
+                height='38px'
+                position='absolute'
+                bottom='13px'
+                borderRadius='8px'
+                border= '1px dashed rgba(255, 255, 255, 0.47)'
+                // onClick={()=>addPokedex(pokedex)}
+                >Excluir!</Button>
+              </ImageButton>
+        </Container> :
+        <div></div>
 
-      <ImageButton>
-        <img src='imagemPokemon' alt='Imagem Pokémon'/>
-        <Button>Capturar!</Button>
-      </ImageButton>
-    </ContainerCard>
-    </>
+      }    
+        </ChakraProvider>
   )
 }
