@@ -7,6 +7,7 @@ import { GlobalStyles } from "./GlobalStyles";
 function App() {
 
   const [pokemons, setPokemons] = useState([])
+  const [pokedex, setPokedex] = useState([])
 
   useEffect(()=>{
     getPokemon()
@@ -14,19 +15,23 @@ function App() {
 
     const getPokemon = async () => {
         try{
-            const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/?offset=30&limit=20`)
-        	// console.log(response.data)
+            const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20`)
           setPokemons(response.data.results)
         } catch (error) {
             console.log(error.response)
         }}
 
-console.log(pokemons)
+    const addPokedex = (pokemon) =>{
+      return setPokedex([...pokedex, pokemon] )
+    } 
 
 const context = {
   pokemons,
   setPokemons,
-  getPokemon
+  getPokemon,
+  pokedex,
+  setPokedex,
+  addPokedex
 }
 
   return (
