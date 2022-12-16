@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const InfoCard = styled.div`
-    /* border: 2px solid black; */
+    border: 2px solid black;
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -32,7 +32,7 @@ export const InfoCard = styled.div`
     }
 `
 export const ImageButton = styled.div`
-    /* border: 2px solid green; */
+    border: 2px solid green;
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -49,7 +49,7 @@ export const ImageButton = styled.div`
 `
 
 export const TypeCard =  styled.div`
-    /* border: 2px solid white; */
+    border: 2px solid white;
     display: flex;
     align-items: flex-start;
     position: absolute;

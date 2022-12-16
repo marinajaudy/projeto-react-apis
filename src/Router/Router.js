@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { HomePage } from '../Pages/HomePage/HomePage'
-import {Detalhes} from '../Pages/DetailsPage/Detalhes'
+import {Details} from '../Pages/DetailsPage/Details'
 import { PokedexPage } from '../Pages/PokedexPage/PokedexPage'
 
 export const Router = () => {
@@ -10,7 +10,7 @@ export const Router = () => {
         <Routes>
             <Route index element={<HomePage/>}/>
             <Route path='/pokedex' element={<PokedexPage/>}/>
-            <Route path='/detalhes' element={<Detalhes/>}/>
+            <Route path='/details/:name' element={<Details/>}/>
         </Routes>
         </BrowserRouter>
     )

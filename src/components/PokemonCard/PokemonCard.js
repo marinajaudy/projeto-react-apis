@@ -5,15 +5,17 @@ import axios from 'axios'
 import pokebolaBackground from '../../assets/pokebolaFundoCard.png'
 import { typesPokemon } from '../../constants/typesPokemon'
 import { GlobalContext } from '../../contexts/GlobalContext'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
+import { goToDetailsPage } from '../../Router/coordinator'
 
 export const PokemonCard = (props) => {
   const { pokemon, pokedex } = props
 
   const context = useContext(GlobalContext)
   const location = useLocation()
+  const navigate = useNavigate()
 
-  const {addPokedex} = context
+  const {addPokedex, removePokemonPokedex} = context
 
   const [cardPokemon, setCardPokemon] = useState({})
   const [typeApi, setTypeApi] = useState({})
@@ -31,28 +33,29 @@ export const PokemonCard = (props) => {
   useEffect(() => {
     getPokemonByName()
   }, [])
-  
- 
+    
   const capitalizeFistLetter = (string) =>{
     return string && string.charAt(0).toUpperCase() + string.slice(1);
   }
+
   
   return (
-      <ChakraProvider>
-      {
-        location.pathname === '/' ? 
+     
+        <>
+       {
+        location.pathname === '/' && 
         <Container
-            // border='2px solid red'
-            borderRadius='12px'
-            width='440px'
-            height='210px'
-            display='flex'
-            justifyContent='space-between'
-            bg={typeApi && typesPokemon[typeApi]?.color}
-            backgroundImage={pokebolaBackground}
-            backgroundRepeat='no-repeat'
-            backgroundPosition='180px'
-    >
+        border='2px solid blue'
+        borderRadius='12px'
+        width='440px'
+        height='210px'
+        display='flex'
+        justifyContent='space-between'
+        bg={typeApi && typesPokemon[typeApi]?.color}
+        backgroundImage={pokebolaBackground}
+        backgroundRepeat='no-repeat'
+        backgroundPosition='180px'
+>
         <InfoCard>
                 <h3>#{cardPokemon.id}</h3>
                 <h2>{capitalizeFistLetter(cardPokemon.name)}</h2>
@@ -71,6 +74,7 @@ export const PokemonCard = (props) => {
                 padding='0px'
                 margin='0px'
                 backgroundColor='transparent'
+                onClick={()=>goToDetailsPage(navigate, cardPokemon.name)}
                 >Detalhes</Button>
               </InfoCard>
               <ImageButton>
@@ -87,29 +91,28 @@ export const PokemonCard = (props) => {
                 onClick={()=>addPokedex(cardPokemon)}
                 >Capturar!</Button>
               </ImageButton>
-        </Container> :
-        <div></div>
+              </Container>
       }
       {
-        location.pathname === '/pokedex' ?
+        location.pathname === '/pokedex' &&
         <Container
-            border='2px solid red'
-            borderRadius='12px'
-            width='440px'
-            height='210px'
-            display='flex'
-            justifyContent='space-between'
-            bg={typeApi && typesPokemon[typeApi]?.color}
-            backgroundImage={pokebolaBackground}
-            backgroundRepeat='no-repeat'
-            backgroundPosition='180px'
-    >
+        border='2px solid blue'
+        borderRadius='12px'
+        width='440px'
+        height='210px'
+        display='flex'
+        justifyContent='space-between'
+        bg={pokedex.types[0]?.type.name && typesPokemon[pokedex.types[0].type.name]?.color}
+        backgroundImage={pokebolaBackground}
+        backgroundRepeat='no-repeat'
+        backgroundPosition='180px'
+>
         <InfoCard>
                 <h3>#{pokedex.id}</h3>
                 <h2>{capitalizeFistLetter(pokedex.name)}</h2>
                 <TypeCard>
-                  {pokedex.types?.map((typePokedex)=>{
-                    return <img src={typesPokemon[typePokedex.type.name].image} alt='img' />
+                  {pokedex.types?.map((typePokemon)=>{
+                    return <img src={typesPokemon[typePokemon.type.name].image} alt='img' />
                   })}
                 </TypeCard>
                 <Button 
@@ -122,6 +125,7 @@ export const PokemonCard = (props) => {
                 padding='0px'
                 margin='0px'
                 backgroundColor='transparent'
+                onClick={()=> goToDetailsPage(navigate, pokedex.name)}
                 >Detalhes</Button>
               </InfoCard>
               <ImageButton>
@@ -135,13 +139,11 @@ export const PokemonCard = (props) => {
                 bottom='13px'
                 borderRadius='8px'
                 border= '1px dashed rgba(255, 255, 255, 0.47)'
-                // onClick={()=>addPokedex(pokedex)}
+                onClick={()=>removePokemonPokedex(pokedex)}
                 >Excluir!</Button>
               </ImageButton>
-        </Container> :
-        <div></div>
-
+              </Container>
       }    
-        </ChakraProvider>
+      </>
   )
 }
