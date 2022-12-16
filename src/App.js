@@ -3,6 +3,7 @@ import { Router } from "./Router/Router";
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { GlobalStyles } from "./GlobalStyles";
+import { ChakraProvider } from "@chakra-ui/react";
 
 function App() {
 
@@ -25,19 +26,33 @@ function App() {
       return setPokedex([...pokedex, pokemon] )
     } 
 
+    const removePokemonPokedex = (pokemonToRemove ) =>{
+      const newPokedex = [...pokedex]
+      // const pokemonRemove = newPokedex.find((pokemonInPokedex) => pokemonInPokedex.id === pokemonToRemove.id)
+      const pokemonRomeveIndex = newPokedex.find((pokemonInPokedex) => pokemonInPokedex.id === pokemonToRemove.id)
+      newPokedex.splice(pokemonRomeveIndex, 1)
+      setPokedex(newPokedex)
+    
+    }
+
 const context = {
   pokemons,
   setPokemons,
   getPokemon,
   pokedex,
   setPokedex,
-  addPokedex
+  addPokedex,
+  removePokemonPokedex
 }
+
+
 
   return (
     <GlobalContext.Provider value={context}>
       <GlobalStyles/>
+      <ChakraProvider>     
       <Router/>
+      </ChakraProvider>
     </GlobalContext.Provider>
   );
 }

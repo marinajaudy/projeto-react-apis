@@ -1,41 +1,59 @@
 import React from 'react'
-import { ContainerHeader } from './Header.styled'
-import { Button, ChakraProvider } from '@chakra-ui/react'
+import { ContainerHeader, AllPokemons, ImageLogo, LinkReturn, ButtonHeader } from './Header.styled'
+import { Button, ChakraProvider} from '@chakra-ui/react'
 import logoPokemon from '../../assets/logoPokemon.png'
-// import setaIcon from '../../assets/setaIcon.svg'
-import {goToPokedexPage, goToHomePage} from '../../Router/coordinator'
+import setaIcon from '../../assets/setaIcon.svg'
+import { goToPokedexPage, goToHomePage } from '../../Router/coordinator'
 import { useLocation, useNavigate } from 'react-router-dom'
-// import { HomePage } from '../../Pages/HomePage/HomePage'
 
 export const Header = () => {
 
   const navigate = useNavigate()
-  // const location = useLocation()
-  // console.log(location)
-  // console.log(location.pathname === '/pokedex')
+  const location = useLocation()
 
   return (
     <ChakraProvider>
       <ContainerHeader>
-        {/* <div>
-        <img src={setaIcon} alt='Seta Icon'/>
-        <Button width='14vw'
-        height='8vh'
-        fontSize='24px'
-        border='none'
-        backgroundColor='transparent'
-        onClick={()=>goToHomePage(navigate)}
-        >Todos os Pokemóns</Button>
-        </div> */}
-        <img src={logoPokemon} alt='Logo Pokemon' onClick={()=>goToHomePage(navigate)}/>
-        <Button colorScheme='blue'
-        width='17vw'
-        height='8vh'
-        fontSize='24px'
-        onClick={()=>goToPokedexPage(navigate)}
-        >Pokedex</Button>
+        {location.pathname === '/pokedex' &&
+        <AllPokemons>
+          <img src={setaIcon} alt='Seta Icon' />
+          <LinkReturn 
+            onClick={() => goToHomePage(navigate)}
+            >Todos os Pokemóns</LinkReturn>
+        </AllPokemons>
+        }
+        {location.pathname === '/details' &&
+          <AllPokemons>
+          <img src={setaIcon} alt='Seta Icon' />
+          <LinkReturn 
+            onClick={() => goToHomePage(navigate)}
+            >Todos os Pokemóns</LinkReturn>
+        </AllPokemons>
+        }
+      <ImageLogo src={logoPokemon} alt='Logo Pokemon' onClick={() => goToHomePage(navigate)} />
+      {location.pathname === '/' &&
+        <ButtonHeader
+        onClick={() => goToPokedexPage(navigate)}
+        >Pokedex</ButtonHeader>
+      }
+      {location.pathname === '/details' &&
+        <Button 
+            bg="#FF6262"
+            width='13vw'
+            height='6.5vh'
+            fontSize='16px'
+            borderRadius='8px'
+            fontFamily="'Poppins', sans-serif"
+            fontWeight='400'
+            lineHeight='24px'
+            color='#FFFFFF'
+            // onClick={()=>goToPokedexPage(navigate)}
+            >Excluir do Pokedex</Button>
+      }
+      
+          
       </ContainerHeader>
     </ChakraProvider>
-    
+
   )
 }
