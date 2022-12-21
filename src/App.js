@@ -24,6 +24,7 @@ function App() {
 
     const addPokedex = (pokemon) =>{
       return setPokedex([...pokedex, pokemon] )
+      
     } 
 
     const removePokemonPokedex = (pokemonToRemove ) =>{
@@ -31,8 +32,7 @@ function App() {
       // const pokemonRemove = newPokedex.find((pokemonInPokedex) => pokemonInPokedex.id === pokemonToRemove.id)
       const pokemonRomeveIndex = newPokedex.find((pokemonInPokedex) => pokemonInPokedex.id === pokemonToRemove.id)
       newPokedex.splice(pokemonRomeveIndex, 1)
-      setPokedex(newPokedex)
-    
+      setPokedex(newPokedex) 
     }
 
 const context = {
@@ -42,7 +42,7 @@ const context = {
   pokedex,
   setPokedex,
   addPokedex,
-  removePokemonPokedex
+  removePokemonPokedex,
 }
 
 
