@@ -15,11 +15,12 @@ export const PokemonCard = (props) => {
   const location = useLocation()
   const navigate = useNavigate()
 
-  const {addPokedex, removePokemonPokedex} = context
+  const {addPokedex, removePokedex} = context
 
   const [cardPokemon, setCardPokemon] = useState({})
   const [typeApi, setTypeApi] = useState({})
  
+  
   const getPokemonByName = async () => {
     try {
       const response = await axios.get(pokemon.url)
@@ -37,7 +38,6 @@ export const PokemonCard = (props) => {
   const capitalizeFistLetter = (string) =>{
     return string && string.charAt(0).toUpperCase() + string.slice(1);
   }
-
   
   return (
      
@@ -139,7 +139,7 @@ export const PokemonCard = (props) => {
                 bottom='13px'
                 borderRadius='8px'
                 border= '1px dashed rgba(255, 255, 255, 0.47)'
-                onClick={()=>removePokemonPokedex(pokedex)}
+                onClick={()=>removePokedex(pokedex)}
                 >Excluir!</Button>
               </ImageButton>
               </Container>
