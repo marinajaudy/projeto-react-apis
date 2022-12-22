@@ -22,18 +22,31 @@ function App() {
             console.log(error.response)
         }}
 
-    const addPokedex = (pokemon) =>{
-      return setPokedex([...pokedex, pokemon] )
-      
-    } 
+        const addPokedex = (pokemon) => {
+          console.log(pokemon)
+          const addPokemon = [...pokedex.sort((a, b) => {
+            return a.id - b.id
+        })]
+          const newPokemon = addPokemon.find((item)=>item.id === pokemon.id)
+          if (!newPokemon){
+            const pokemonAdd = {...pokemon}
+            addPokemon.push(pokemonAdd)
+          }
+          setPokedex(addPokemon)
+          localStorage.setItem('pokedex',JSON.stringify(addPokemon))
+        };
+  
+        const removePokedex = (pokemon) => {
+          const filterDelete = pokedex.filter((poke)=>poke.id !== pokemon.id)
+          // const newPokedex = [...pokemons, pokemon]
+          
+          // pokedex.splice(index, 1)
+          // pokemons.push(pokemon)
+          // localStorage.setItem('pokeList', JSON.stringify(pokemons))
+          localStorage.setItem('pokedex',JSON.stringify(filterDelete))
+          setPokedex(filterDelete)
+        }
 
-    const removePokemonPokedex = (pokemonToRemove ) =>{
-      const newPokedex = [...pokedex]
-      // const pokemonRemove = newPokedex.find((pokemonInPokedex) => pokemonInPokedex.id === pokemonToRemove.id)
-      const pokemonRomeveIndex = newPokedex.find((pokemonInPokedex) => pokemonInPokedex.id === pokemonToRemove.id)
-      newPokedex.splice(pokemonRomeveIndex, 1)
-      setPokedex(newPokedex) 
-    }
 
 const context = {
   pokemons,
@@ -42,7 +55,7 @@ const context = {
   pokedex,
   setPokedex,
   addPokedex,
-  removePokemonPokedex,
+  removePokedex,
 }
 
 
