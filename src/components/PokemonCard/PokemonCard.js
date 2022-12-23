@@ -57,7 +57,11 @@ export const PokemonCard = (props) => {
         backgroundPosition='180px'
 >
         <InfoCard>
-                <h3>#{cardPokemon.id}</h3>
+          {
+            cardPokemon.id < 10 ?
+            <h3>#0{cardPokemon.id}</h3>:
+            <h3>#{cardPokemon.id}</h3>
+          }  
                 <h2>{capitalizeFistLetter(cardPokemon.name)}</h2>
                 <TypeCard>
                   {cardPokemon.types?.map((typePokemon)=>{

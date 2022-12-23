@@ -46,12 +46,12 @@ export const TypeCard =  styled.div`
 
 export const StatsStyle = styled.div`
     border: 2px solid yellow;
-    /* display: flex; */
+    width: 307px;
+    display: flex;
 `
 export const ContainerInfoPokemon = styled.div`
         border: 2px solid red;
         width: 100%;
-        height: 22vh;
+        height: 20vh;
         display: flex;
-        gap: 16px;
 `
