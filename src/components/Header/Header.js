@@ -11,6 +11,9 @@ export const Header = () => {
 
   const navigate = useNavigate()
   const location = useLocation()
+  const context = useContext(GlobalContext)
+
+  const {pokemons, pokedex} = context
 
   return (
 
@@ -23,15 +26,15 @@ export const Header = () => {
           <>
             <AllPokemons>
               <img src={setaIcon} alt='Seta Icon' />
-              <LinkReturn
-                onClick={() => goToHomePage(navigate)}
-              >Todos os Pokemóns</LinkReturn>
+              <LinkReturn onClick={() => goToHomePage(navigate)}>Todos os Pokemóns</LinkReturn>
             </AllPokemons>
             <ImageLogo src={logoPokemon} alt='Logo Pokemon' onClick={() => goToHomePage(navigate)} />
           </> :
           <>
             <ImageLogo src={logoPokemon} alt='Logo Pokemon' onClick={() => goToHomePage(navigate)} />
-            <Button
+            {
+              pokedex.name ?
+              <Button
               bg="#FF6262"
               width='13vw'
               height='6.5vh'
@@ -42,7 +45,10 @@ export const Header = () => {
               lineHeight='24px'
               color='#FFFFFF'
             // onClick={()=>goToPokedexPage(navigate)}
-            >Excluir do Pokedex</Button>
+            >Excluir da Pokedex</Button>:
+            <div></div>
+            }
+            
           </>
       }
     </ContainerHeader>

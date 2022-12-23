@@ -74,12 +74,18 @@ export const DetailsCard = () => {
           borderRadius='12px'
           color='black'
         >
+          <Text
+            fontSize='28px'
+            fontWeight='700'
+            padding='10px 18px'
+
+            >Base Stat</Text>
           {cardDetails.stats?.map((stat, i)=>{
               return (
                 <StatsStyle key={stat.i}>
                   <span>{capitalizeFistLetter(stat.stat.name)}</span>
                   <span>{stat.base_stat}</span> 
-                <Progress colorScheme='orange' value={stat.base_stat}/>
+                <Progress width='200px' bg='none' colorScheme='orange' value={stat.base_stat}/>
                 <hr></hr>
                 </StatsStyle>
               )
@@ -89,7 +95,12 @@ export const DetailsCard = () => {
       </Flex>
       <InfoCard>
         <ContainerInfoPokemon>
-        <h3>#{cardDetails.id}</h3>
+          {
+            cardDetails.id < 10 ?
+            <h3>#0{cardDetails.id}</h3>:
+            <h3>#{cardDetails.id}</h3>
+          }
+        
         <h2>{capitalizeFistLetter(cardDetails.name)}</h2>
         <TypeCard>
           {cardDetails.types?.map((typePokemon) => {
@@ -119,6 +130,7 @@ export const DetailsCard = () => {
           >
             <Text
             fontSize='24px'
+            fontWeight='700'
             >Moves:</Text>
             {cardDetails.moves?.filter((move, index)=> index<4).map((move)=>{
                 console.log(move)
