@@ -7,11 +7,11 @@ import { PokemonCard } from '../../components/PokemonCard/PokemonCard'
 export const PokedexPage = () => {
 
   const context = useContext(GlobalContext)
-  const {setPokedex, pokedex} = context
+  const { setPokedex, pokedex } = context
 
-  useEffect(()=>{
+  useEffect(() => {
     const pokemonPokedex = localStorage.getItem('pokedex')
-    const myPokedex =JSON.parse(pokemonPokedex)
+    const myPokedex = JSON.parse(pokemonPokedex)
     setPokedex(myPokedex)
   }, [])
 

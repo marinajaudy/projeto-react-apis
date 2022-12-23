@@ -32,4 +32,5 @@ export const Circle = styled.div`
         z-index: 0;
         left: 300px;
         bottom: 200px;
+        z-index: 0;
     `

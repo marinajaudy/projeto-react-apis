@@ -2,12 +2,14 @@ import styled from "styled-components";
 
 export const ContainerHeader = styled.header`
     height: 18vh;
+    background-color: white;
     display: grid;
     justify-items: center;
     align-items: center;
     grid-template-columns: 1fr 1fr 1fr;
 `
 export const AllPokemons = styled.div`
+    border: 2px solid red;
     display: flex;
     gap: 10px;
     grid-column: 1/2;
@@ -15,11 +17,11 @@ export const AllPokemons = styled.div`
 export const LinkReturn = styled.div`
     font-size: 24px;
     font-family:'Poppins', sans-serif;
-    font-weight: 700;
+    font-weight: 700; 
     cursor: pointer;
 `
 export const ImageLogo = styled.img`
-    grid-column: 2/3;
+    grid-column: 2/3; 
 `
 export const ButtonHeader = styled.button`
     grid-column: 3/4;
