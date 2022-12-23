@@ -1,4 +1,4 @@
-import { Button, ChakraProvider, Container } from '@chakra-ui/react'
+import { Button, Container } from '@chakra-ui/react'
 import React, { useEffect, useState, useContext } from 'react'
 import { InfoCard, ImageButton, TypeCard } from './PokemonCard.styled'
 import axios from 'axios'
@@ -112,7 +112,7 @@ export const PokemonCard = (props) => {
                 <h2>{capitalizeFistLetter(pokedex.name)}</h2>
                 <TypeCard>
                   {pokedex.types?.map((typePokemon)=>{
-                    return <img src={typesPokemon[typePokemon.type.name].image} alt='img' />
+                    return <img key={typePokemon.id} src={typesPokemon[typePokemon.type.name].image} alt='img' />
                   })}
                 </TypeCard>
                 <Button 

@@ -14,7 +14,7 @@ export const ContainerPokedex = styled.main`
         margin-top: 2vh;
     }
 `
- export const PokedexMain = styled.div`
+export const PokedexMain = styled.div`
     border: 2px solid greenyellow;
     display: flex;
     row-gap: 53px;

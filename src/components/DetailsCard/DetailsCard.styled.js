@@ -2,17 +2,16 @@ import styled from "styled-components";
 import pokebolaBackground from '../../assets/pokebolaFundoCard.png'
 
 export const InfoCard = styled.div`
-    border: 2px solid black;
     width: 50%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     position: relative;
     background-image: url(${pokebolaBackground});
     background-repeat: no-repeat;
-    background-position: -7vw 0vh;
+    background-position: -8vw 0vh;
     background-size: 50vw 90vh;
     margin-right: -20px;
+    padding-left: 50px;
     z-index: 4;
 
     h3{
@@ -43,4 +42,16 @@ export const TypeCard =  styled.div`
     position: absolute;
     top: 89px;
     gap: 16px;
+`
+
+export const StatsStyle = styled.div`
+    border: 2px solid yellow;
+    /* display: flex; */
+`
+export const ContainerInfoPokemon = styled.div`
+        border: 2px solid red;
+        width: 100%;
+        height: 22vh;
+        display: flex;
+        gap: 16px;
 `

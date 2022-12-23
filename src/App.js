@@ -38,15 +38,9 @@ function App() {
   
         const removePokedex = (pokemon) => {
           const filterDelete = pokedex.filter((poke)=>poke.id !== pokemon.id)
-          // const newPokedex = [...pokemons, pokemon]
-          
-          // pokedex.splice(index, 1)
-          // pokemons.push(pokemon)
-          // localStorage.setItem('pokeList', JSON.stringify(pokemons))
           localStorage.setItem('pokedex',JSON.stringify(filterDelete))
           setPokedex(filterDelete)
         }
-
 
 const context = {
   pokemons,
@@ -57,8 +51,6 @@ const context = {
   addPokedex,
   removePokedex,
 }
-
-
 
   return (
     <GlobalContext.Provider value={context}>
