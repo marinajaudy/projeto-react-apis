@@ -1,13 +1,13 @@
 import styled from "styled-components";
-import pokebola from '../../assets/pokebolaFundoCard.png'
-import grayCircle from '../../assets/grayCircle.png'
+import pokebola from '../../assets/pokebolaFundoCinza.png'
 
 export const ContainerDetails = styled.div`
     border: 2px solid red;
-    /* background-image: url(${grayCircle}); */
-    /* background-repeat: no-repeat;
-    background-size: 85%; */
+    background-image: url(${pokebola}); 
+    background-repeat: no-repeat;
+    background-size: 78%; 
     background-color: #5E5E5E;
+    background-position: 5vw 0;
     display: flex;
     flex-direction: column;
     color: #FFFFFF;

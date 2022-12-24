@@ -1,4 +1,4 @@
-import { Box, Button, Container, Flex, Image, Progress, Text } from '@chakra-ui/react'
+import { Box, Button, Container, Flex, Grid, Image, Progress, Text } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import { InfoCard, TypeCard, StatsStyle, ContainerInfoPokemon} from './DetailsCard.styled'
 import axios from 'axios'
@@ -29,7 +29,16 @@ export const DetailsCard = () => {
     return string && string.charAt(0).toUpperCase() + string.slice(1);
   }
 
-  console.log(cardDetails)
+  const baseStatLevelColor = (stat) =>{
+    if (stat.base_stat < 60) {
+      return 'orange'
+    } else if (60 < stat.base_stat < 85 ){
+      return 'yellow'
+    } else {
+      return 'green'
+    }
+  }
+
   return (
 
     <Container
@@ -82,15 +91,50 @@ export const DetailsCard = () => {
             >Base Stat</Text>
           {cardDetails.stats?.map((stat, i)=>{
               return (
-                <StatsStyle key={stat.i}>
-                  <span>{capitalizeFistLetter(stat.stat.name)}</span>
-                  <span>{stat.base_stat}</span> 
-                <Progress width='200px' bg='none' colorScheme='orange' value={stat.base_stat}/>
+                <Grid key={stat.i}
+                border= '2px solid yellow'
+                width= '307px'
+                display= 'grid'
+                justifyItems= 'flex-start'
+                alignItems= 'center'
+                gridTemplateColumns= '2fr 1fr 2fr'
+                fontFamily= "'Poppins', sans-serif"
+                fontWeight= '400'
+                position='relative'
+                >
+                  <Text 
+                  color='gray.500'
+                  gridColumn='1/2'>{capitalizeFistLetter(stat.stat.name)}</Text>
+                  <Text gridColumn='2/3'>{stat.base_stat}</Text> 
+                <Progress 
+                gridColumn='3/4'
+                
+                borderRadius='4px'
+                width='200px'
+                bg='none' 
+                colorScheme={baseStatLevelColor(stat)} 
+                value={stat.base_stat}/> 
                 <hr></hr>
-                </StatsStyle>
+                </Grid>
               )
             })
           }
+          <Flex
+          padding='10px 18px'
+          gap='30px'
+          >
+                  <Text
+                  color='gray.500'
+                  fontFamily= "'Poppins', sans-serif"
+                  fontWeight= '400'
+                  >Total</Text>
+                  <Text>{
+                  cardDetails.stats?.map((stat)=>{
+                    let sum = 0
+                    return sum = stat.base_stat++
+                  })
+                  }</Text>
+          </Flex>
         </Box>
       </Flex>
       <InfoCard>
@@ -133,7 +177,6 @@ export const DetailsCard = () => {
             fontWeight='700'
             >Moves:</Text>
             {cardDetails.moves?.filter((move, index)=> index<4).map((move)=>{
-                console.log(move)
                 return(
                   <Button key={move}
                   width= 'fit-content'
@@ -143,7 +186,6 @@ export const DetailsCard = () => {
                   borderRadius= '12px'
                   display= 'inline-block'           
                   >
-                    {/* <p>{move.move.name}</p> */}
                   <p>{capitalizeFistLetter(move.move.name)}</p>
                   </Button>
                 )

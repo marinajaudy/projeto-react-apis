@@ -4,36 +4,45 @@ import { Button } from '@chakra-ui/react'
 import logoPokemon from '../../assets/logoPokemon.png'
 import setaIcon from '../../assets/setaIcon.svg'
 import { goToPokedexPage, goToHomePage } from '../../Router/coordinator'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate, useParams } from 'react-router-dom'
 import { GlobalContext } from '../../contexts/GlobalContext'
 
-export const Header = () => {
+export const Header = (props) => {
+
+  const {pokedex} = props
 
   const navigate = useNavigate()
   const location = useLocation()
   const context = useContext(GlobalContext)
+  const params = useParams()
 
-  const {pokemons, pokedex} = context
+  console.log(params.name)
+
+  const {pokemons} = context
+
+  console.log(pokemons)
 
   return (
 
     <ContainerHeader>
-      {location.pathname === '/' ?
+      {location.pathname === '/' &&
         <>
           <ImageLogo src={logoPokemon} alt='Logo Pokemon' onClick={() => goToHomePage(navigate)} />
           <ButtonHeader onClick={() => goToPokedexPage(navigate)}>Pokedex</ButtonHeader>
-        </> : location.pathname === '/pokedex' ?
+        </> }
+        {location.pathname === '/pokedex' &&
           <>
             <AllPokemons>
               <img src={setaIcon} alt='Seta Icon' />
               <LinkReturn onClick={() => goToHomePage(navigate)}>Todos os Pokemóns</LinkReturn>
             </AllPokemons>
             <ImageLogo src={logoPokemon} alt='Logo Pokemon' onClick={() => goToHomePage(navigate)} />
-          </> :
-          <>
+          </> }
+          {
+            location.pathname === `/details/${params.name}` &&
+            <>
+            <div></div>
             <ImageLogo src={logoPokemon} alt='Logo Pokemon' onClick={() => goToHomePage(navigate)} />
-            {
-              pokedex.name ?
               <Button
               bg="#FF6262"
               width='13vw'
@@ -45,12 +54,9 @@ export const Header = () => {
               lineHeight='24px'
               color='#FFFFFF'
             // onClick={()=>goToPokedexPage(navigate)}
-            >Excluir da Pokedex</Button>:
-            <div></div>
-            }
-            
-          </>
-      }
+            >Excluir da Pokedex</Button>
+            </>
+          }
     </ContainerHeader>
   )
 }

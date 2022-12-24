@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext } from 'react'
 import { Header } from '../../components/Header/Header'
 import { PokemonCard } from '../../components/PokemonCard/PokemonCard'
 import { GlobalContext } from '../../contexts/GlobalContext'
