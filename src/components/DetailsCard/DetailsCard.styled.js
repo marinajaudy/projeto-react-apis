@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import pokebolaBackground from '../../assets/pokebolaFundoCard.png'
+import pokebolaBackground from '../../assets/fundoPokebolaDetalhes.png'
 
 export const InfoCard = styled.div`
     width: 50%;
@@ -8,8 +8,7 @@ export const InfoCard = styled.div`
     position: relative;
     background-image: url(${pokebolaBackground});
     background-repeat: no-repeat;
-    background-position: -8vw 0vh;
-    background-size: 50vw 90vh;
+    background-position: -6vw 0;
     margin-right: -20px;
     padding-left: 50px;
     z-index: 4;
@@ -44,11 +43,26 @@ export const TypeCard =  styled.div`
     gap: 16px;
 `
 
-export const StatsStyle = styled.div`
-    border: 2px solid yellow;
-    width: 307px;
-    display: flex;
-`
+// export const StatsStyle = styled.div`
+//     border: 2px solid yellow;
+//     width: 307px;
+//     display: grid;
+//     justify-items: flex-start;
+//     align-items: flex-start;
+//     grid-template-columns: 2fr 1fr 2fr;
+//     font-family: 'Poppins', sans-serif;
+//     font-weight: 400;
+
+//     p{
+//     color: gray;
+//     grid-column: 1/2;
+//     }
+
+//     span{
+//         grid-column: 2/3;
+//     }
+    
+// `
 export const ContainerInfoPokemon = styled.div`
         border: 2px solid red;
         width: 100%;

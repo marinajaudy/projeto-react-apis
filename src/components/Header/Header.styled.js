@@ -9,7 +9,6 @@ export const ContainerHeader = styled.header`
     grid-template-columns: 1fr 1fr 1fr;
 `
 export const AllPokemons = styled.div`
-    border: 2px solid red;
     display: flex;
     gap: 10px;
     grid-column: 1/2;
