@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { Header } from '../../components/Header/Header'
+import { Modal } from '../../components/Modal/Modal'
 import { PokemonCard } from '../../components/PokemonCard/PokemonCard'
 import { GlobalContext } from '../../contexts/GlobalContext'
 import { ContainerHomePage, PokemonMain } from './HomePage.styles'
@@ -7,7 +8,7 @@ import { ContainerHomePage, PokemonMain } from './HomePage.styles'
 export const HomePage = () => {
 
   const context = useContext(GlobalContext)
-  const { pokemons, pokedex } = context
+  const { pokemons, pokedex, isOpen } = context
 
   localStorage.setItem('pokedex', JSON.stringify(pokedex))
 
@@ -22,7 +23,7 @@ export const HomePage = () => {
           })
           }
         </PokemonMain>
-      </ContainerHomePage>
+      </ContainerHomePage>  
     </>
   )
 }

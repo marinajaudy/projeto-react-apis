@@ -3,12 +3,14 @@ import { Router } from "./Router/Router";
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { GlobalStyles } from "./GlobalStyles";
-import { ChakraProvider } from "@chakra-ui/react";
+import { ChakraProvider, useDisclosure } from "@chakra-ui/react";
 
 function App() {
 
   const [pokemons, setPokemons] = useState([])
   const [pokedex, setPokedex] = useState([])
+  const [flow, setFlow] = useState(2)
+  const { isOpen, onOpen, onClose } = useDisclosure()
 
   useEffect(()=>{
     getPokemon()
@@ -23,7 +25,6 @@ function App() {
         }}
 
         const addPokedex = (pokemon) => {
-          console.log(pokemon)
           const addPokemon = [...pokedex.sort((a, b) => {
             return a.id - b.id
         })]
@@ -50,6 +51,12 @@ const context = {
   setPokedex,
   addPokedex,
   removePokedex,
+  flow,
+  setFlow,
+  isOpen,
+  onOpen,
+  onClose
+
 }
 
   return (
