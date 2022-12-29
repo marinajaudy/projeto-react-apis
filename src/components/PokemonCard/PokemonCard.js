@@ -7,6 +7,7 @@ import { typesPokemon } from '../../constants/typesPokemon'
 import { GlobalContext } from '../../contexts/GlobalContext'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { goToDetailsPage } from '../../Router/coordinator'
+import { Modal } from '../Modal/Modal'
 
 export const PokemonCard = (props) => {
   const { pokemon, pokedex } = props
@@ -15,7 +16,7 @@ export const PokemonCard = (props) => {
   const location = useLocation()
   const navigate = useNavigate()
 
-  const { addPokedex, removePokedex } = context
+  const { addPokedex, removePokedex, setFlow, isOpen, onOpen } = context
 
   const [cardPokemon, setCardPokemon] = useState({})
   const [typeApi, setTypeApi] = useState({})
@@ -37,6 +38,22 @@ export const PokemonCard = (props) => {
 
   const capitalizeFistLetter = (string) => {
     return string && string.charAt(0).toUpperCase() + string.slice(1);
+  }
+
+  const flowPagesDetails = () =>{
+    goToDetailsPage(navigate, cardPokemon.name)
+    setFlow(2)
+  }
+
+  const flowPageDeleteDetails = () => {
+    goToDetailsPage(navigate, pokedex.name)
+    setFlow(1)
+  }
+
+  const modalAddPokedex = () => {
+    addPokedex(cardPokemon)
+    onOpen(isOpen)
+    
   }
 
   return (
@@ -76,7 +93,7 @@ export const PokemonCard = (props) => {
               padding='0px'
               margin='0px'
               backgroundColor='transparent'
-              onClick={() => goToDetailsPage(navigate, cardPokemon.name)}
+              onClick={() => flowPagesDetails()} 
             >Detalhes</Button>
           </InfoCard>
           <ImageButton>
@@ -90,9 +107,10 @@ export const PokemonCard = (props) => {
               bottom='13px'
               borderRadius='8px'
               border='1px dashed rgba(255, 255, 255, 0.47)'
-              onClick={() => addPokedex(cardPokemon)}
+              onClick={() => modalAddPokedex()}
             >Capturar!</Button>
           </ImageButton>
+          {isOpen ? <Modal></Modal> : <></>}
         </Container>
       }
       {
@@ -126,7 +144,7 @@ export const PokemonCard = (props) => {
               padding='0px'
               margin='0px'
               backgroundColor='transparent'
-              onClick={() => goToDetailsPage(navigate, pokedex.name)}
+              onClick={()=>flowPageDeleteDetails()}
             >Detalhes</Button>
           </InfoCard>
           <ImageButton>
@@ -140,7 +158,7 @@ export const PokemonCard = (props) => {
               bottom='13px'
               borderRadius='8px'
               border='1px dashed rgba(255, 255, 255, 0.47)'
-              onClick={() => removePokedex(pokedex)}
+              onClick= {() => removePokedex(pokedex)}
             >Excluir!</Button>
           </ImageButton>
         </Container>

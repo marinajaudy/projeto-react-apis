@@ -7,9 +7,8 @@ import { goToPokedexPage, goToHomePage } from '../../Router/coordinator'
 import { useLocation, useNavigate, useParams } from 'react-router-dom'
 import { GlobalContext } from '../../contexts/GlobalContext'
 
-export const Header = (props) => {
+export const Header = () => {
 
-  const {pokedex} = props
 
   const navigate = useNavigate()
   const location = useLocation()
@@ -18,7 +17,7 @@ export const Header = (props) => {
 
   console.log(params.name)
 
-  const {pokemons} = context
+  const {pokemons, flow, removePokedex, addPokedex} = context
 
   console.log(pokemons)
 
@@ -43,6 +42,7 @@ export const Header = (props) => {
             <>
             <div></div>
             <ImageLogo src={logoPokemon} alt='Logo Pokemon' onClick={() => goToHomePage(navigate)} />
+              {flow === 1 &&
               <Button
               bg="#FF6262"
               width='13vw'
@@ -53,8 +53,24 @@ export const Header = (props) => {
               fontWeight='400'
               lineHeight='24px'
               color='#FFFFFF'
-            // onClick={()=>goToPokedexPage(navigate)}
+              onClick={()=>removePokedex()}
             >Excluir da Pokedex</Button>
+              }
+               {flow === 2 &&
+              <Button
+              bg="#33A4F5"
+              width='13vw'
+              height='6.5vh'
+              fontSize='16px'
+              borderRadius='8px'
+              fontFamily="'Poppins', sans-serif"
+              fontWeight='400'
+              lineHeight='24px'
+              color='#FFFFFF'
+              onClick={()=>addPokedex()}
+            >Adicionar a Pokedex</Button>
+              }
+              
             </>
           }
     </ContainerHeader>
