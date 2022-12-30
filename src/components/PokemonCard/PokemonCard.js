@@ -7,19 +7,29 @@ import { typesPokemon } from '../../constants/typesPokemon'
 import { GlobalContext } from '../../contexts/GlobalContext'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { goToDetailsPage } from '../../Router/coordinator'
-import { Modal } from '../Modal/Modal'
+// import { Modal } from '../ModalConfirm/ModalConfirm'
 
 export const PokemonCard = (props) => {
-  const { pokemon, pokedex } = props
+  const { pokemon, pokedex, index } = props
 
   const context = useContext(GlobalContext)
   const location = useLocation()
   const navigate = useNavigate()
 
-  const { addPokedex, removePokedex, setFlow, isOpen, onOpen } = context
+  const { addPokedex, removePokedex, setFlow, setIsOpen, setIsOpenDel } = context
 
   const [cardPokemon, setCardPokemon] = useState({})
   const [typeApi, setTypeApi] = useState({})
+
+  useEffect(() => {
+    const poke = JSON.parse(localStorage.getItem("pokemons"));
+    if(poke !== null){
+      return
+    } else{
+      getPokemonByName()
+    }
+
+  }, []);
 
 
   const getPokemonByName = async () => {
@@ -48,12 +58,6 @@ export const PokemonCard = (props) => {
   const flowPageDeleteDetails = () => {
     goToDetailsPage(navigate, pokedex.name)
     setFlow(1)
-  }
-
-  const modalAddPokedex = () => {
-    addPokedex(cardPokemon)
-    onOpen(isOpen)
-    
   }
 
   return (
@@ -107,10 +111,12 @@ export const PokemonCard = (props) => {
               bottom='13px'
               borderRadius='8px'
               border='1px dashed rgba(255, 255, 255, 0.47)'
-              onClick={() => modalAddPokedex()}
+              onClick={() =>{
+                addPokedex(cardPokemon, index)
+                setIsOpen(true)
+              }}
             >Capturar!</Button>
           </ImageButton>
-          {isOpen ? <Modal></Modal> : <></>}
         </Container>
       }
       {
@@ -158,7 +164,10 @@ export const PokemonCard = (props) => {
               bottom='13px'
               borderRadius='8px'
               border='1px dashed rgba(255, 255, 255, 0.47)'
-              onClick= {() => removePokedex(pokedex)}
+              onClick= {() => {
+                removePokedex(pokedex)
+                setIsOpenDel(true)
+              }}
             >Excluir!</Button>
           </ImageButton>
         </Container>

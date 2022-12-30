@@ -6,6 +6,7 @@ import setaIcon from '../../assets/setaIcon.svg'
 import { goToPokedexPage, goToHomePage } from '../../Router/coordinator'
 import { useLocation, useNavigate, useParams } from 'react-router-dom'
 import { GlobalContext } from '../../contexts/GlobalContext'
+import { ModalConfirm } from '../ModalConfirm/ModalConfirm'
 
 export const Header = () => {
 
@@ -17,12 +18,12 @@ export const Header = () => {
 
   console.log(params.name)
 
-  const {pokemons, flow, removePokedex, addPokedex} = context
+  const {pokemons, flow, removePokedex, addPokedex, isOpen, isOpenDel} = context
 
   console.log(pokemons)
 
   return (
-
+<>
     <ContainerHeader>
       {location.pathname === '/' &&
         <>
@@ -53,7 +54,7 @@ export const Header = () => {
               fontWeight='400'
               lineHeight='24px'
               color='#FFFFFF'
-              onClick={()=>removePokedex()}
+              onClick={()=>removePokedex(params)}
             >Excluir da Pokedex</Button>
               }
                {flow === 2 &&
@@ -67,12 +68,15 @@ export const Header = () => {
               fontWeight='400'
               lineHeight='24px'
               color='#FFFFFF'
-              onClick={()=>addPokedex()}
+              onClick={()=>addPokedex(params)}
             >Adicionar a Pokedex</Button>
               }
               
             </>
           }
     </ContainerHeader>
+    {isOpen? <ModalConfirm></ModalConfirm> : <></>}
+    {isOpenDel? <ModalConfirm></ModalConfirm> : <></>}
+    </>
   )
 }

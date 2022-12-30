@@ -21,7 +21,7 @@ export const InfoCard = styled.div`
 
     h2{
         position: absolute;
-        width: 159px;
+        width: 200px;
         height: 39px;
         top: 40px;
         font-family: 'Inter', sans-serif;
