@@ -50,16 +50,6 @@ export const PokemonCard = (props) => {
     return string && string.charAt(0).toUpperCase() + string.slice(1);
   }
 
-  const flowPagesDetails = () =>{
-    goToDetailsPage(navigate, cardPokemon.name)
-    setFlow(2)
-  }
-
-  const flowPageDeleteDetails = () => {
-    goToDetailsPage(navigate, pokedex.name)
-    setFlow(1)
-  }
-
   return (
     <>
       {
@@ -97,7 +87,10 @@ export const PokemonCard = (props) => {
               padding='0px'
               margin='0px'
               backgroundColor='transparent'
-              onClick={() => flowPagesDetails()} 
+              onClick={() => {
+                goToDetailsPage(navigate, cardPokemon.name)
+                setFlow(2)
+              }} 
             >Detalhes</Button>
           </InfoCard>
           <ImageButton>
@@ -150,7 +143,10 @@ export const PokemonCard = (props) => {
               padding='0px'
               margin='0px'
               backgroundColor='transparent'
-              onClick={()=>flowPageDeleteDetails()}
+              onClick={()=>{
+                goToDetailsPage(navigate, pokedex.name)
+                setFlow(1)
+              }}
             >Detalhes</Button>
           </InfoCard>
           <ImageButton>
