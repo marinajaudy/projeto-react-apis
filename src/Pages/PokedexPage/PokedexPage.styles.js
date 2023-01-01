@@ -15,11 +15,13 @@ export const ContainerPokedex = styled.main`
     }
 `
 export const PokedexMain = styled.div`
-    border: 2px solid yellow;
     display: flex;
     row-gap: 53px;
     flex-wrap: wrap;
     margin: 0px 40px;
     margin-top: 6vh;
-    min-height: 60vh
+    min-height: 60vh;
+    min-width: 80vw;
+    justify-content: space-between;
+    align-items: flex-start;
  `
