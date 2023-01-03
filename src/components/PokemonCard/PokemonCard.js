@@ -34,7 +34,7 @@ export const PokemonCard = (props) => {
 
   const getPokemonByName = async () => {
     try {
-      const response = await axios.get(pokemon.url)
+      const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon.name}`)
       setCardPokemon(response.data)
       setTypeApi(response.data.types[0].type.name)
     } catch (error) {
@@ -105,7 +105,7 @@ export const PokemonCard = (props) => {
               borderRadius='8px'
               border='1px dashed rgba(255, 255, 255, 0.47)'
               onClick={() =>{
-                addPokedex(cardPokemon, index)
+                addPokedex(cardPokemon)
                 setIsOpen(true)
               }}
             >Capturar!</Button>

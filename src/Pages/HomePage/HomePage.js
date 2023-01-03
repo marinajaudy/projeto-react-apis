@@ -10,15 +10,19 @@ export const HomePage = () => {
   const { pokemons, pokedex } = context
 
   localStorage.setItem('pokedex', JSON.stringify(pokedex))
-
+  console.log(pokedex)
   return (
     <>
       <Header />
       <ContainerHomePage>
         <h1>Todos Pokémons</h1>
         <PokemonMain>
-          {pokemons.map((pokemon, index) => {
-            return (<PokemonCard key={pokemon.id} pokemon={pokemon} index={index}/>)
+          {pokemons
+          .filter((pokemon)=> { 
+           return !(pokedex.find((item)=>item.name === pokemon.name))
+          })
+          .map((pokemon, index) => {
+            return (<PokemonCard key={pokemon.id} pokemon={pokemon}/>)
           })
           }
         </PokemonMain>
