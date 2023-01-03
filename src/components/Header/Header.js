@@ -16,11 +16,11 @@ export const Header = () => {
   const context = useContext(GlobalContext)
   const params = useParams()
 
-  console.log(params.name)
+  console.log(params)
 
   const {pokemons, flow, removePokedex, addPokedex, isOpen, isOpenDel, pokedex} = context
 
-  console.log(pokemons)
+  // console.log(pokemons)
 
   return (
 <>
@@ -54,7 +54,7 @@ export const Header = () => {
               fontWeight='400'
               lineHeight='24px'
               color='#FFFFFF'
-              onClick={()=>removePokedex(pokedex)}
+              onClick={()=>removePokedex(params)}
             >Excluir da Pokedex</Button>
               }
                {flow === 2 &&
@@ -68,7 +68,7 @@ export const Header = () => {
               fontWeight='400'
               lineHeight='24px'
               color='#FFFFFF'
-              onClick={()=>addPokedex(pokemons)}
+              onClick={()=>addPokedex(params.name)}
             >Adicionar a Pokedex</Button>
               }
               
