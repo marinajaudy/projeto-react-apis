@@ -18,92 +18,92 @@ import rock from '../assets/rock.svg'
 import steel from '../assets/steel.svg'
 
 export const typesPokemon = {
-    poison:{
+    poison: {
         type: 'poison',
         image: poison,
         color: '#AD61AE'
     },
-    grass:{
+    grass: {
         type: 'grass',
         image: grass,
         color: '#729F92'
     },
-    fire:{
+    fire: {
         type: 'fire',
         image: fire,
         color: '#EAAB7D'
     },
-    flying:{
+    flying: {
         type: 'flying',
         image: flying,
         color: '#6892B0'
     },
-    water:{
+    water: {
         type: 'water',
         image: water,
         color: '#71C3FF'
     },
-    bug:{
+    bug: {
         type: 'bug',
         image: bug,
         color: '#76A866'
     },
-    normal:{
+    normal: {
         type: 'normal',
         image: normal,
         color: '#BF9762'
     },
-    dark:{
+    dark: {
         type: 'dark',
         image: dark,
         color: '#AD61AE'
     },
-    dragon:{
+    dragon: {
         type: 'dragon',
         image: dragon,
         color: '#AD61AE'
     },
-    electric:{
+    electric: {
         type: 'electric',
         image: electric,
         color: '#F4D23B'
     },
-    fairy:{
+    fairy: {
         type: 'fairy',
         image: fairy,
         color: '#EC8FE6'
     },
-    fighting:{
+    fighting: {
         type: 'fighting',
         image: fighting,
         color: '#CE4069'
     },
-    ghost:{
+    ghost: {
         type: 'ghost',
         image: ghost,
         color: '#5269AC'
     },
-    ground:{
+    ground: {
         type: 'ground',
         image: ground,
         color: '#D97745'
     },
-    ice:{
+    ice: {
         type: 'ice',
         image: ice,
         color: '#74CEC0'
     },
-    psychic:{
+    psychic: {
         type: 'psychic',
         image: psychic,
         color: '#F67176'
     },
-    rock:{
+    rock: {
         type: 'rock',
         image: rock,
         color: '#C7B78B'
     },
-    steel:{
+    steel: {
         type: 'steel',
         image: steel,
         color: '#BBBBBB'

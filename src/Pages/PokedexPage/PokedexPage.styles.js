@@ -7,6 +7,7 @@ export const ContainerPokedex = styled.main`
     color: #FFFFFF;
     font-weight: 700;
     min-height: 82vh;
+    padding-bottom: 5vh;
 
     h1{
         font-size: 48px;

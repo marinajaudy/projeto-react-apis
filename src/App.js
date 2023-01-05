@@ -10,9 +10,9 @@ function App() {
 
   return (
     <GlobalContext.Provider value={context}>
-      <GlobalStyles/>
-      <ChakraProvider>     
-      <Router/>
+      <GlobalStyles />
+      <ChakraProvider>
+        <Router />
       </ChakraProvider>
     </GlobalContext.Provider>
   );
