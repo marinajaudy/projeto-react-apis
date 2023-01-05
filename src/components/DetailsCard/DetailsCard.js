@@ -81,41 +81,49 @@ export const DetailsCard = () => {
           >Base Stat</Text>
           {cardDetails.stats?.map((stat) => {
             return (
-              <Grid key={stat.stat.name}
-                width='307px'
-                display='grid'
-                justifyItems='flex-end'
-                alignItems='center'
-                gridTemplateColumns='2fr 1fr 2fr'
-                fontFamily="'Poppins', sans-serif"
-                fontWeight='400'
-              >
-                <Text
-                  color='gray.500'
-                  gridColumn='1/2'>{capitalizeFistLetter(stat.stat.name)}</Text>
-                <Text gridColumn='2/3'>{stat.base_stat}</Text>
-                <Flex>
-                <Progress
-                  gridColumn='3/4'
-                  borderRadius='4px'
-                  width='200px'
-                  bg='none'
-                  colorScheme={stat.base_stat < 50 ? "orange" : stat.base_stat < 80 ? "yellow" : "green"} value={(stat.base_stat + 10)}
-                  />
-                </Flex>
-                <hr></hr>
-              </Grid>   
+              <>
+                <Grid key={stat.stat.name}
+                  width='307px'
+                  display='grid'
+                  justifyItems='flex-end'
+                  alignItems='center'
+                  gridTemplateColumns='2fr 1fr 2fr'
+                  fontFamily="'Poppins', sans-serif"
+                  fontWeight='400'
+                  padding='0 10px'
+                >
+                  <Text
+                    color='gray.500'
+                    gridColumn='1/2'>{capitalizeFistLetter(stat.stat.name)}</Text>
+                  <Text gridColumn='2/3'>{stat.base_stat}</Text>
+                  <Flex>
+                    <Progress
+                      gridColumn='3/4'
+                      borderRadius='4px'
+                      width='200px'
+                      bg='none'
+                      // bg='black'
+                      colorScheme={stat.base_stat < 50 ? "orange" : stat.base_stat < 80 ? "yellow" : "green"} value={(stat.base_stat + 10)}
+                    />
+                  </Flex>
+                </Grid>
+                <Flex
+                  border='0.5px solid #f0f0f1'
+                  margin='0 20px'
+                ></Flex>
+              </>
             )
           })
           }
           <Flex
             padding='10px 18px'
-            gap='30px'
+            gap='10px'
           >
             <Text
               color='gray.500'
               fontFamily="'Poppins', sans-serif"
               fontWeight='400'
+              paddingLeft='30px'
             >Total</Text>
             <Text>{
               cardDetails.stats?.reduce((acc, stat) => {
@@ -123,6 +131,10 @@ export const DetailsCard = () => {
               }, 0)
             }</Text>
           </Flex>
+          <Flex
+            border='0.5px solid #f0f0f1'
+            margin='0 20px'
+          ></Flex>
         </Box>
       </Flex>
       <InfoCard>

@@ -11,8 +11,9 @@ export const ContainerDetails = styled.div`
     flex-direction: column;
     color: #FFFFFF;
     font-weight: 700;
-    min-height: 120vh;
+    min-height: 100vh;
     gap: 7vh;
+    padding-bottom: 5vh;
 
     h1{
         font-size: 48px;
@@ -21,15 +22,3 @@ export const ContainerDetails = styled.div`
         z-index: 1;
     }
 `
-
-export const Circle = styled.div`
-        background-color: rgba(102, 102, 102, 90%);
-        border-radius: 50%;
-        width: 50vw;
-        height: 100vh;
-        position: absolute;
-        z-index: 0;
-        left: 300px;
-        bottom: 200px;
-        z-index: 0;
-    `

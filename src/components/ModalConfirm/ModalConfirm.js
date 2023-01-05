@@ -29,10 +29,11 @@ export const ModalConfirm = () => {
       justifyContent: 'center',
       alignItems: 'center',
       flexDirection: 'column',
-      zIndex: 'auto'
     },
     overlay: {
-      backgroundColor: 'rgba(0, 0, 0, 0.50)'
+      backgroundColor: 'rgba(0, 0, 0, 0.50)',
+      zIndex: '1000'
+
     }
   }
 

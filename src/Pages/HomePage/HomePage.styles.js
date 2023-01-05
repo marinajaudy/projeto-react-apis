@@ -6,6 +6,8 @@ export const ContainerHomePage = styled.main`
     flex-direction: column;
     color: #FFFFFF;
     font-weight: 700;
+    min-height: 82vh;
+    padding-bottom: 5vh;
 
     h1{
         font-size: 48px;
