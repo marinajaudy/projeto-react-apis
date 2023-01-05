@@ -1,6 +1,6 @@
 import { Box, Button, Container, Flex, Grid, Image, Progress, Text } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
-import { InfoCard, TypeCard, StatsStyle, ContainerInfoPokemon} from './DetailsCard.styled'
+import { InfoCard, TypeCard, ContainerInfoPokemon } from './DetailsCard.styled'
 import axios from 'axios'
 import { typesPokemon } from '../../constants/typesPokemon'
 import { useParams } from 'react-router-dom'
@@ -29,16 +29,6 @@ export const DetailsCard = () => {
     return string && string.charAt(0).toUpperCase() + string.slice(1);
   }
 
-  const baseStatLevelColor = (stat) =>{
-    if (stat.base_stat < 60) {
-      return 'orange'
-    } else if (60 < stat.base_stat < 85 ){
-      return 'yellow'
-    } else {
-      return 'green'
-    }
-  }
-
   return (
 
     <Container
@@ -65,11 +55,11 @@ export const DetailsCard = () => {
         >
           <Image
             borderRadius='8px'
-            width='282px'  
+            width='282px'
             height='282px'
             backgroundColor='white'
             src={cardDetails.sprites?.["front_default"]} alt='Imagem Pokemon de Costas' />
-            <Image
+          <Image
             borderRadius='8px'
             width='282px'
             height='282px'
@@ -88,52 +78,50 @@ export const DetailsCard = () => {
             fontWeight='700'
             padding='10px 18px'
 
-            >Base Stat</Text>
-          {cardDetails.stats?.map((stat, i)=>{
-              return (
-                <Grid key={stat.i}
-                border= '2px solid yellow'
-                width= '307px'
-                display= 'grid'
-                justifyItems= 'flex-start'
-                alignItems= 'center'
-                gridTemplateColumns= '2fr 1fr 2fr'
-                fontFamily= "'Poppins', sans-serif"
-                fontWeight= '400'
-                position='relative'
-                >
-                  <Text 
+          >Base Stat</Text>
+          {cardDetails.stats?.map((stat) => {
+            return (
+              <Grid key={stat.stat.name}
+                width='307px'
+                display='grid'
+                justifyItems='flex-end'
+                alignItems='center'
+                gridTemplateColumns='2fr 1fr 2fr'
+                fontFamily="'Poppins', sans-serif"
+                fontWeight='400'
+              >
+                <Text
                   color='gray.500'
                   gridColumn='1/2'>{capitalizeFistLetter(stat.stat.name)}</Text>
-                  <Text gridColumn='2/3'>{stat.base_stat}</Text> 
-                <Progress 
-                gridColumn='3/4'
-                
-                borderRadius='4px'
-                width='200px'
-                bg='none' 
-                colorScheme={baseStatLevelColor(stat)} 
-                value={stat.base_stat}/> 
+                <Text gridColumn='2/3'>{stat.base_stat}</Text>
+                <Flex>
+                <Progress
+                  gridColumn='3/4'
+                  borderRadius='4px'
+                  width='200px'
+                  bg='none'
+                  colorScheme={stat.base_stat < 50 ? "orange" : stat.base_stat < 80 ? "yellow" : "green"} value={(stat.base_stat + 10)}
+                  />
+                </Flex>
                 <hr></hr>
-                </Grid>
-              )
-            })
+              </Grid>   
+            )
+          })
           }
           <Flex
-          padding='10px 18px'
-          gap='30px'
+            padding='10px 18px'
+            gap='30px'
           >
-                  <Text
-                  color='gray.500'
-                  fontFamily= "'Poppins', sans-serif"
-                  fontWeight= '400'
-                  >Total</Text>
-                  <Text>{
-                  cardDetails.stats?.map((stat)=>{
-                    let sum = 0
-                    return sum = stat.base_stat++
-                  })
-                  }</Text>
+            <Text
+              color='gray.500'
+              fontFamily="'Poppins', sans-serif"
+              fontWeight='400'
+            >Total</Text>
+            <Text>{
+              cardDetails.stats?.reduce((acc, stat) => {
+                return acc + stat.base_stat
+              }, 0)
+            }</Text>
           </Flex>
         </Box>
       </Flex>
@@ -141,57 +129,57 @@ export const DetailsCard = () => {
         <ContainerInfoPokemon>
           {
             cardDetails.id < 10 ?
-            <h3>#0{cardDetails.id}</h3>:
-            <h3>#{cardDetails.id}</h3>
+              <h3>#0{cardDetails.id}</h3> :
+              <h3>#{cardDetails.id}</h3>
           }
-        
-        <h2>{capitalizeFistLetter(cardDetails.name)}</h2>
-        <TypeCard>
-          {cardDetails.types?.map((typePokemon) => {
-            return <img key={typePokemon.id} src={typesPokemon[typePokemon.type.name].image} alt='img' />
-          })}
-        </TypeCard>
+
+          <h2>{capitalizeFistLetter(cardDetails.name)}</h2>
+          <TypeCard>
+            {cardDetails.types?.map((typePokemon) => {
+              return <img key={typePokemon.id} src={typesPokemon[typePokemon.type.name].image} alt='img' />
+            })}
+          </TypeCard>
         </ContainerInfoPokemon>
         <Image
-        position= 'absolute'
-        width= '270px'
-        height= '270px'
-        right= '40px'
-        top= '-130px'
-        src={cardDetails.sprites?.other["official-artwork"].front_default} alt='Imagem Pokémon' />
+          position='absolute'
+          width='270px'
+          height='270px'
+          right='40px'
+          top='-130px'
+          src={cardDetails.sprites?.other["official-artwork"].front_default} alt='Imagem Pokémon' />
         <Flex
-            backgroundColor='#FFFFFF'
-            borderRadius='8px'
-            width='292px'
-            height='453px'
-            color='black'
-            position='absolute'
-            bottom='24px'
-            flexDirection='column'
-            gap='20px'
-            padding='18px 18px'
+          backgroundColor='#FFFFFF'
+          borderRadius='8px'
+          width='292px'
+          height='453px'
+          color='black'
+          position='absolute'
+          bottom='24px'
+          flexDirection='column'
+          gap='20px'
+          padding='18px 18px'
 
-          >
-            <Text
+        >
+          <Text
             fontSize='24px'
             fontWeight='700'
-            >Moves:</Text>
-            {cardDetails.moves?.filter((move, index)=> index<4).map((move)=>{
-                return(
-                  <Button key={move}
-                  width= 'fit-content'
-                  height= '37px'
-                  bg= '#ECECEC'
-                  border= '1px dashed rgba(0, 0, 0, 0.14)'
-                  borderRadius= '12px'
-                  display= 'inline-block'           
-                  >
-                  <p>{capitalizeFistLetter(move.move.name)}</p>
-                  </Button>
-                )
-              })
-            } 
-          </Flex>
+          >Moves:</Text>
+          {cardDetails.moves?.filter((move, index) => index < 4).map((move) => {
+            return (
+              <Button key={move}
+                width='fit-content'
+                height='37px'
+                bg='#ECECEC'
+                border='1px dashed rgba(0, 0, 0, 0.14)'
+                borderRadius='12px'
+                display='inline-block'
+              >
+                <p>{capitalizeFistLetter(move.move.name)}</p>
+              </Button>
+            )
+          })
+          }
+        </Flex>
       </InfoCard>
     </Container>
   )

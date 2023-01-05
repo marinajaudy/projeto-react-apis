@@ -17,7 +17,7 @@ export const PokedexPage = () => {
 
   return (
     <>
-      <Header pokedex={pokedex}/>
+      <Header pokedex={pokedex} />
       <ContainerPokedex>
         <h1>Meus Pokémons</h1>
         <PokedexMain>

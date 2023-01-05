@@ -7,10 +7,9 @@ import { typesPokemon } from '../../constants/typesPokemon'
 import { GlobalContext } from '../../contexts/GlobalContext'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { goToDetailsPage } from '../../Router/coordinator'
-// import { Modal } from '../ModalConfirm/ModalConfirm'
 
 export const PokemonCard = (props) => {
-  const { pokemon, pokedex, index } = props
+  const { pokemon, pokedex } = props
 
   const context = useContext(GlobalContext)
   const location = useLocation()
@@ -23,9 +22,9 @@ export const PokemonCard = (props) => {
 
   useEffect(() => {
     const poke = JSON.parse(localStorage.getItem("pokemons"));
-    if(poke !== null){
+    if (poke !== null) {
       return
-    } else{
+    } else {
       getPokemonByName()
     }
 
@@ -90,7 +89,7 @@ export const PokemonCard = (props) => {
               onClick={() => {
                 goToDetailsPage(navigate, cardPokemon.name)
                 setFlow(2)
-              }} 
+              }}
             >Detalhes</Button>
           </InfoCard>
           <ImageButton>
@@ -104,7 +103,7 @@ export const PokemonCard = (props) => {
               bottom='13px'
               borderRadius='8px'
               border='1px dashed rgba(255, 255, 255, 0.47)'
-              onClick={() =>{
+              onClick={() => {
                 addPokedex(cardPokemon)
                 setIsOpen(true)
               }}
@@ -143,7 +142,7 @@ export const PokemonCard = (props) => {
               padding='0px'
               margin='0px'
               backgroundColor='transparent'
-              onClick={()=>{
+              onClick={() => {
                 goToDetailsPage(navigate, pokedex.name)
                 setFlow(1)
               }}
@@ -160,7 +159,7 @@ export const PokemonCard = (props) => {
               bottom='13px'
               borderRadius='8px'
               border='1px dashed rgba(255, 255, 255, 0.47)'
-              onClick= {() => {
+              onClick={() => {
                 removePokedex(pokedex)
                 setIsOpenDel(true)
               }}

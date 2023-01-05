@@ -13,7 +13,7 @@ export const ContainerHomePage = styled.main`
         margin-top: 2vh;
     }
 `
- export const PokemonMain = styled.div`
+export const PokemonMain = styled.div`
     display: flex;
     row-gap: 53px;
     flex-wrap: wrap;

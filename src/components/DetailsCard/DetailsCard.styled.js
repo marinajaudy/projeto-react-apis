@@ -35,37 +35,23 @@ export const InfoCard = styled.div`
         line-height: 39px;
     }
 `
-export const TypeCard =  styled.div`
+export const TypeCard = styled.div`
     display: flex;
     align-items: flex-start;
     position: absolute;
     top: 89px;
     gap: 16px;
 `
-
-// export const StatsStyle = styled.div`
-//     border: 2px solid yellow;
-//     width: 307px;
-//     display: grid;
-//     justify-items: flex-start;
-//     align-items: flex-start;
-//     grid-template-columns: 2fr 1fr 2fr;
-//     font-family: 'Poppins', sans-serif;
-//     font-weight: 400;
-
-//     p{
-//     color: gray;
-//     grid-column: 1/2;
-//     }
-
-//     span{
-//         grid-column: 2/3;
-//     }
-    
-// `
 export const ContainerInfoPokemon = styled.div`
-        border: 2px solid red;
         width: 100%;
         height: 20vh;
         display: flex;
+        margin-top: 2.5vh;
+        position: relative;
+
+        h3{
+            position: absolute;
+            top: 15px;
+            font-weight: 700;
+        }
 `

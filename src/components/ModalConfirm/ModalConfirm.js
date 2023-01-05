@@ -28,7 +28,8 @@ export const ModalConfirm = () => {
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
-      flexDirection: 'column'
+      flexDirection: 'column',
+      zIndex: 'auto'
     },
     overlay: {
       backgroundColor: 'rgba(0, 0, 0, 0.50)'
@@ -37,31 +38,31 @@ export const ModalConfirm = () => {
 
   return (
     <>
-        <Modal
-          isOpen={isOpen || isOpenDel}
-          onRequestClose={closeModal}
-          style={customStyle}
+      <Modal
+        isOpen={isOpen || isOpenDel}
+        onRequestClose={closeModal}
+        style={customStyle}
+      >
+        <Flex
+          justifyContent='center'
+          alignItems='center'
+          flexDirection='column'
+          onClick={closeModal}
+
         >
-          <Flex
-            justifyContent='center'
-            alignItems='center'
-            flexDirection='column'
-            onClick={closeModal}
-            
-          >
-            {
-              isOpenDel ?
-                <>
-                  <Heading fontSize='48px' fontWeight='700'> Oh No!</Heading>
-                  <Text fontSize='16px' fontWeight='700' >O Pokemón foi removido da sua Pokedex!</Text>
-                </> :
-                <>
-                  <Heading fontSize='48px' fontWeight='700'> Gotcha!</Heading>
-                  <Text fontSize='16px' fontWeight='700'>O Pokemón foi adicionado a sua Pokedex!</Text>
-                </>
-            }
-          </Flex>
-        </Modal>
+          {
+            isOpenDel ?
+              <>
+                <Heading fontSize='48px' fontWeight='700'> Oh No!</Heading>
+                <Text fontSize='16px' fontWeight='700' >O Pokemón foi removido da sua Pokedex!</Text>
+              </> :
+              <>
+                <Heading fontSize='48px' fontWeight='700'> Gotcha!</Heading>
+                <Text fontSize='16px' fontWeight='700'>O Pokemón foi adicionado a sua Pokedex!</Text>
+              </>
+          }
+        </Flex>
+      </Modal>
     </>
   )
 }

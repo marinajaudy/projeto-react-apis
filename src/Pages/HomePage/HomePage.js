@@ -18,15 +18,15 @@ export const HomePage = () => {
         <h1>Todos Pokémons</h1>
         <PokemonMain>
           {pokemons
-          .filter((pokemon)=> { 
-           return !(pokedex.find((item)=>item.name === pokemon.name))
-          })
-          .map((pokemon, index) => {
-            return (<PokemonCard key={pokemon.id} pokemon={pokemon}/>)
-          })
+            .filter((pokemon) => {
+              return !(pokedex.find((item) => item.name === pokemon.name))
+            })
+            .map((pokemon) => {
+              return (<PokemonCard key={pokemon.name} pokemon={pokemon} />)
+            })
           }
         </PokemonMain>
-      </ContainerHomePage>  
+      </ContainerHomePage>
     </>
   )
 }

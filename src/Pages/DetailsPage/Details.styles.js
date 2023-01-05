@@ -2,7 +2,6 @@ import styled from "styled-components";
 import pokebola from '../../assets/pokebolaFundoCinza.png'
 
 export const ContainerDetails = styled.div`
-    border: 2px solid red;
     background-image: url(${pokebola}); 
     background-repeat: no-repeat;
     background-size: 78%; 
