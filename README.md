@@ -1,5 +1,6 @@
 
 <h3 align="center">Projeto React APIs</h3>
+<a name="readme-top"></a>
 
 <p align="center">
     Um site com pokemons para você capturar na sua pokedex.
@@ -36,6 +37,8 @@
 
 <!-- ABOUT THE PROJECT-->
 # **Sobre o Projeto**
+
+[![Product Name Screen Shot][product-screenshot]](./src//assets/ProjetoApiPokedex.gif)
 
 O Projeto React e APIs é um site de pokémons que possui três páginas: Home, Pokedex e Detalhes. O projeto está subdivido em temas de acordo com os conteúdos que estudado durante o Módulo 2 - Frontend no bootcamp da Labenu.
 
@@ -153,8 +156,10 @@ Site onde você pode capturar seus pokemons para sua própria Pokedex. Além dis
 Marina Jaudy  - marinarrjaudy@hotmail.com
 
 Project Link: [https://github.com/marinajaudy/projeto-react-apis.git](https://github.com/marinajaudy/projeto-react-apis.git)
-Linkedin: [Linkedin](https://www.linkedin.com/in/marina-jaudy/)
-Github: [Github](https://github.com/marinajaudy)
+<br/>
+[![Linkedin](https://img.shields.io/badge/linkedin-%230A66C2.svg?&style=for-the-badge&logo=linkedin&logoColor=white&link=https://www.linkedin.com/in/andrejaques/)](https://www.linkedin.com/in/marina-jaudy)
+<br/>
+[Github](https://github.com/marinajaudy)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -163,7 +168,7 @@ Github: [Github](https://github.com/marinajaudy)
 
 * [PokeApi - API](https://pokeapi.co/)
 * Aos professores da Labenu
-* Meus colegas de sala queme ajudaram no processo do projeto
+* Meus colegas de sala que me ajudaram no processo do projeto
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
