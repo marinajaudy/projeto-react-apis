@@ -10,6 +10,7 @@ export const GlobalState = () => {
   const [isOpenDel, setIsOpenDel] = useState(false)
   const [isOpenContact, setIsOpenContact] = useState(false)
   const [completed, setCompleted] = useState(0);
+  const [isOpenFade, setIsOpenFade] = useState(false)
 
   console.log(isOpen)
 
@@ -75,7 +76,9 @@ export const GlobalState = () => {
     setIsOpenContact,
     openContact,
     completed,
-    setCompleted
+    setCompleted,
+    isOpenFade,
+    setIsOpenFade
   }
 }
 
