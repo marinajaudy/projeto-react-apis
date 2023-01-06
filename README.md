@@ -101,7 +101,7 @@ O objetivo deste projeto criar um site com três páginas usando a [PokeApi - AP
 ### **Deployment**
 
 Versel:
-https://projeto-react-apis-o502j5j2v-marinajaudy.vercel.app/
+https://projeto-react-apis-chi.vercel.app/
 
 <!-- GETTING STARTED -->
 ## Getting Started 
