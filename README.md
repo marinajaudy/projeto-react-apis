@@ -1,17 +1,11 @@
 
-<h3 align="center">Pokedex Labenu</h3>
+<h3 align="center">Projeto React APIs</h3>
 
 <p align="center">
-    A website with pokemons to capture in your own pokedex
+    Um site com pokemons para você capturar na sua pokedex.
     <br />
-    <a href="https://projeto-react-apis.vercel.app/"><strong>Explore the docs »</strong></a>
+    <a href="https://projeto-react-apis-chi.vercel.app/"><strong>Explore o documento »</strong></a>
     <br />
-    <br />
-    <a href="https://github.com/Afmjuniors/projeto-react-apis">View Demo</a>
-    ·
-    <a href="https://github.com/Afmjuniors/projeto-react-apis/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/Afmjuniors/projeto-react-apis/issues">Request Feature</a>
   </p>
 </div>
 
@@ -22,15 +16,15 @@
     <li>
       <a href="#about-the-project">Sobre o Projeto</a>
       <ul>
-        <li><a href="#built-with">Objetivo</a></li>
+        <li><a href="#goal">Objetivo</a></li>
       </ul>
-	      <li> <a href='#deployment'>Requisitos</a></li>
+	      <li> <a href='#requirements'>Requisitos</a></li>
     </li>
     <li>
-      <a href="#getting-started">Construido com</a>
+      <a href="#build-with">Construido com</a>
       <ul>
-        <li><a href="#prerequisites"> </a>Deployment</li>
-        <li><a href="#installation">Getting Started</a></li>
+        <li><a href="#deployment"> </a>Deployment</li>
+        <li><a href="#getting-started">Getting Started</a></li>
       </ul>
     </li>
     <li><a href="#usage">Uso</a></li>
@@ -43,9 +37,10 @@
   </ol>
 </details>
 
+<!-- ABOUT THE PROJECT-->
 # **Sobre o Projeto**
 
-O Projeto React e APIs é um site de pokémons que possui três páginas: Home, Pokedex e Detalhes. O projeto está subdivido em temas de acordo com os conteúdos que estudado durante o Módulo 2 - Frontend.
+O Projeto React e APIs é um site de pokémons que possui três páginas: Home, Pokedex e Detalhes. O projeto está subdivido em temas de acordo com os conteúdos que estudado durante o Módulo 2 - Frontend no bootcamp da Labenu.
 
 Este projeto terá como fonte de dados para a sua criação a [Poke Api](https://pokeapi.co/ "Poke Api"), uma Api pública, muito usada para aplicações focadas em aprendizado de programação e também usada em cases de processos seletivos.
 
@@ -60,8 +55,9 @@ Os conteúdos principais  a serem utilizados são:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- GOAL-->
 ## **Objetivo**
-O objetivo deste projeto criar um site com três páginas usando a Poke Api com as seguintes ferramentas:
+O objetivo deste projeto criar um site com três páginas usando a [PokeApi - API](https://pokeapi.co/) com as seguintes ferramentas:
 
 - React
 - React Router
@@ -71,6 +67,7 @@ O objetivo deste projeto criar um site com três páginas usando a Poke Api com 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- REQUIREMENTS -->
 ### **Requisitos**
 - **Gerais:**
 	- [x] O site deve ter 3 páginas: Home, Pokedex e Detalhes;
@@ -87,12 +84,13 @@ O objetivo deste projeto criar um site com três páginas usando a Poke Api com 
 	- [x] Header deve ter um botão para voltar para a Home
 	- [x] Não deve ser possível adicionar o mesmo Pokemon duas vezes na Pokedex
 - **Página de Detalhes**
-	- [ ] Mostrar os detalhes do Pokemon selecionado, com informações descritas
+	- [x] Mostrar os detalhes do Pokemon selecionado, com informações descritas
 	- [x] Header deve ter um botão para adicionar ou remover da Pokedex e outro para voltar a página home.
-    - [ ] [Criar um readme](https://www.youtube.com/watch?v=1QKwP0SJK-c "Crie um readme") para o projeto;
+  - [x] [Criar um readme](https://www.youtube.com/watch?v=1QKwP0SJK-c "Crie um readme") para o projeto;
 	
 	<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- BUILD WITH -->
 #### **Construido com**
 
 * [![React][React.js]][React-url]
@@ -101,27 +99,28 @@ O objetivo deste projeto criar um site com três páginas usando a Poke Api com 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Deployment
+<!-- DEPLOYMENT -->
+### **Deployment**
 
 Versel:
-<!-- COLOCAR MEU LINK -->
+https://projeto-react-apis-o502j5j2v-marinajaudy.vercel.app/
 
-<!-- Iniciando -->
+<!-- GETTING STARTED -->
 ## Getting Started 
 
 Esse é um exemplo das intruções de como você configura o projeto localmente.
 Para ter uma copia local, siga os passos abaixo:
 
-### Prerequisites
+### Pré-requisitos
 
 * npm
   ```sh
   npm install npm@latest -g
   ```
 
-### Installation
+### Instalação
 
-1. Clone the repo
+1. Clone do repositório
    ```sh
    git clone https://github.com/Afmjuniors/projeto-frontendreact.git
    ```
@@ -129,14 +128,13 @@ Para ter uma copia local, siga os passos abaixo:
    ```sh
    npm install
    ```
-
-
+   
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- USAGE EXAMPLES -->
+<!-- USAGE -->
 ## Uso
 
-Um site onde você pode capturar seus pokemons para sua própria Pokedex. Além disso, é possível ver informações detalhadas do pokemon da sua escolha.
+Site onde você pode capturar seus pokemons para sua própria Pokedex. Além disso, é possível ver informações detalhadas do pokemon da sua escolha.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -144,10 +142,10 @@ Um site onde você pode capturar seus pokemons para sua própria Pokedex. Além 
 ## Roadmap
 
 -  HomePage
-	* Display 21 pokemon da API. 
--  Pokedex
-	* Display  todos os pokemons que você capturar para sua pokedex.
-- Pokemon details
+	* Página com 21 pokemons da API PokeAPI. 
+-  Pokedex Page
+	* Página  todos os pokemons que você capturar para sua pokedex.
+-  Details Page
     * Informações detalhadas sobre o pokemon selecionado.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -158,17 +156,19 @@ Um site onde você pode capturar seus pokemons para sua própria Pokedex. Além 
 Marina Jaudy  - marinarrjaudy@hotmail.com
 
 Project Link: [https://github.com/marinajaudy/projeto-react-apis.git](https://github.com/marinajaudy/projeto-react-apis.git)
+Linkedin: [Linkedin](https://www.linkedin.com/in/marina-jaudy/)
+Github: [Github](https://github.com/marinajaudy)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
+## Agradecimentos
 
 * [PokeApi - API](https://pokeapi.co/)
-
+* Aos professores da Labenu
+* Meus colegas de sala queme ajudaram no processo do projeto
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
@@ -205,10 +205,3 @@ Project Link: [https://github.com/marinajaudy/projeto-react-apis.git](https://gi
 [Styled-url]: https://www.styled-components.com/
 [Chakra-UI]: https://img.shields.io/static/v1?style=for-the-badge&message=Chakra+UI&color=319795&logo=Chakra+UI&logoColor=FFFFFF&label=
 [Chakra-url]: https://chakra-ui.com/getting-started
-
-
-
-
-
-
-- Entregue o projeto no [Formulário de entrega](https://docs.google.com/forms/d/e/1FAIpQLSfGGRaglpzWpdREBBfq3eUCMXkRXuiS61Zfyy0L_Ce0uNIXTA/viewform).
