@@ -38,7 +38,7 @@
 <!-- ABOUT THE PROJECT-->
 # **Sobre o Projeto**
 
-[![Product Name Screen Shot][product-screenshot]](https://drive.google.com/file/d/135r5aH_B2I5m_buOO5aKZ-xP29CuREN2/view?usp=sharing)
+[![Product Name Screen Shot][product-screenshot]](www.exemplo.com)
 
 O Projeto React e APIs é um site de pokémons que possui três páginas: Home, Pokedex e Detalhes. O projeto está subdivido em temas de acordo com os conteúdos que estudado durante o Módulo 2 - Frontend no bootcamp da Labenu.
 
@@ -72,7 +72,7 @@ O objetivo deste projeto criar um site com três páginas usando a [PokeApi - AP
 - **Gerais:**
 	- [x] O site deve ter 3 páginas: Home, Pokedex e Detalhes;
 	- [x] Projeto deve seguir o [design](https://www.figma.com/file/KseyA2Ofghiek2Cy3ZaDre/Poked%C3%A9x?t=AEi3zEmWmarf1FbP-0 "design") proposto;
-	- [ ] O fluxo de trocas de páginas devem ser semelhante ao [fluxograma](https://www.figma.com/proto/KseyA2Ofghiek2Cy3ZaDre/Poked%C3%A9x?page-id=0%3A1&node-id=2%3A2&viewport=358%2C197%2C0.27&scaling=scale-down&starting-point-node-id=2%3A2 "fluxograma");
+	- [x] O fluxo de trocas de páginas devem ser semelhante ao [fluxograma](https://www.figma.com/proto/KseyA2Ofghiek2Cy3ZaDre/Poked%C3%A9x?page-id=0%3A1&node-id=2%3A2&viewport=358%2C197%2C0.27&scaling=scale-down&starting-point-node-id=2%3A2 "fluxograma");
 - **Página Home:**
 	- [x]  Mostrar uma lista de Pokemons, contendo ao menos 20 Pokemons;
 	- [x] Cada Pokemon será representado por um Card;
@@ -122,7 +122,7 @@ Para ter uma copia local, siga os passos abaixo:
 
 1. Clone do repositório
    ```sh
-   git clone https://github.com/Afmjuniors/projeto-frontendreact.git
+   git clone https://github.com/marinajaudy/projeto-frontendreact.git
    ```
 2. Install NPM packages
    ```sh
@@ -158,8 +158,6 @@ Marina Jaudy  - marinarrjaudy@hotmail.com
 Project Link: [https://github.com/marinajaudy/projeto-react-apis.git](https://github.com/marinajaudy/projeto-react-apis.git)
 <br/>
 [![Linkedin](https://img.shields.io/badge/linkedin-%230A66C2.svg?&style=for-the-badge&logo=linkedin&logoColor=white&link=https://www.linkedin.com/in/andrejaques/)](https://www.linkedin.com/in/marina-jaudy)
-<br/>
-[Github](https://github.com/marinajaudy)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -174,18 +172,18 @@ Project Link: [https://github.com/marinajaudy/projeto-react-apis.git](https://gi
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/Afmjuniors/projeto-react-apis.svg?style=for-the-badge
-[contributors-url]: https://github.com/Afmjuniors/projeto-react-apis/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/Afmjuniors/projeto-react-apis.svg?style=for-the-badge
-[forks-url]: https://github.com/Afmjuniors/projeto-react-apis/network/members
-[stars-shield]: https://img.shields.io/github/stars/Afmjuniors/projeto-react-apis.svg?style=for-the-badge
-[stars-url]: https://github.com/Afmjuniors/projeto-react-apis/stargazers
-[issues-shield]: https://img.shields.io/github/issues/Afmjuniors/projeto-react-apis.svg?style=for-the-badge
-[issues-url]: https://github.com/Afmjuniors/projeto-react-apis/issues
-[license-shield]: https://img.shields.io/github/license/Afmjuniors/projeto-react-apis.svg?style=for-the-badge
-[license-url]: https://github.com/Afmjuniors/projeto-react-apis/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/marinajaudy/projeto-react-apis.svg?style=for-the-badge
+[contributors-url]: https://github.com/marinajaudy/projeto-react-apis/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/marinajaudy/projeto-react-apis.svg?style=for-the-badge
+[forks-url]: https://github.com/marinajaudy/projeto-react-apis/network/members
+[stars-shield]: https://img.shields.io/github/stars/marinajaudy/projeto-react-apis.svg?style=for-the-badge
+[stars-url]: https://github.com/marinajaudy/projeto-react-apis/stargazers
+[issues-shield]: https://img.shields.io/github/issues/marinajaudy/projeto-react-apis.svg?style=for-the-badge
+[issues-url]: https://github.com/marinajaudy/projeto-react-apis/issues
+[license-shield]: https://img.shields.io/github/license/marinajaudy/projeto-react-apis.svg?style=for-the-badge
+[license-url]: https://github.com/marinajaudy/projeto-react-apis/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/afmjuniors
+[linkedin-url]: https://linkedin.com/in/marinajaudy
 [product-screenshot]: readme-image/projeto-react-apis.gif
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [Next-url]: https://nextjs.org/

@@ -1,6 +1,6 @@
-import { Flex, Heading, Image, Text } from '@chakra-ui/react'
+import { Flex, Image } from '@chakra-ui/react'
 import Modal from 'react-modal'
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import github from '../../assets/logogithub-removebg-preview.png'
 import linkedin from '../../assets/LogoLinkedin.png'
 import { GlobalContext } from '../../contexts/GlobalContext'
@@ -39,11 +39,7 @@ export const ModalContact = () => {
 
   return (
     <>
-      <Modal
-        isOpen={isOpenContact}
-        onRequestClose={closeModalContact}
-        style={customStyle}
-      >
+      <Modal isOpen={isOpenContact} onRequestClose={closeModalContact} style={customStyle}>
         <Flex
           justifyContent='center'
           alignItems='center'

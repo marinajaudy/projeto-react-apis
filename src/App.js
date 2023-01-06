@@ -3,6 +3,8 @@ import { Router } from "./Router/Router";
 import { GlobalStyles } from "./GlobalStyles";
 import { ChakraProvider } from "@chakra-ui/react";
 import GlobalState from "./contexts/GlobalState";
+import { ModalContact } from './components/ModalContact/ModalContact'
+
 
 function App() {
 
@@ -12,6 +14,7 @@ function App() {
     <GlobalContext.Provider value={context}>
       <GlobalStyles />
       <ChakraProvider>
+        <ModalContact/>
         <Router />
       </ChakraProvider>
     </GlobalContext.Provider>
