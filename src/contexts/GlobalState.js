@@ -8,6 +8,7 @@ export const GlobalState = () => {
   const [flow, setFlow] = useState(2)
   const [isOpen, setIsOpen] = useState(false)
   const [isOpenDel, setIsOpenDel] = useState(false)
+  const [isOpenContact, setIsOpenContact] = useState(false)
 
   console.log(isOpen)
 
@@ -48,6 +49,10 @@ export const GlobalState = () => {
     setIsOpenDel(true)
   }
 
+  const openContact = () =>{
+    setIsOpenContact(true)
+  }
+
   return {
     pokemons,
     setPokemons,
@@ -61,7 +66,11 @@ export const GlobalState = () => {
     isOpen,
     setIsOpen,
     isOpenDel,
-    setIsOpenDel
+    setIsOpenDel,
+    isOpenContact,
+    setIsOpenContact,
+    openContact
+
   }
 }
 
