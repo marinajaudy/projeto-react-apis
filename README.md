@@ -51,8 +51,6 @@ Os conteúdos principais  a serem utilizados são:
 - Design Systems
 - Estado Global
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GOAL-->

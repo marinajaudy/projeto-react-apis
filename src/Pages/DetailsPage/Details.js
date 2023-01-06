@@ -22,7 +22,7 @@ export const Details = () => {
         position='fixed'
         height='100px'
         width='100px'
-        bottom='0px'
+        bottom='2vh'
         right='8vw'
         zIndex='1000'
         >
