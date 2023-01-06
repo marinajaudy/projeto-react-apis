@@ -9,6 +9,7 @@ export const GlobalState = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [isOpenDel, setIsOpenDel] = useState(false)
   const [isOpenContact, setIsOpenContact] = useState(false)
+  const [completed, setCompleted] = useState(0);
 
   console.log(isOpen)
 
@@ -69,8 +70,9 @@ export const GlobalState = () => {
     setIsOpenDel,
     isOpenContact,
     setIsOpenContact,
-    openContact
-
+    openContact,
+    completed,
+    setCompleted
   }
 }
 

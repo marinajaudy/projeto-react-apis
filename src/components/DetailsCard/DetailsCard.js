@@ -4,6 +4,7 @@ import { InfoCard, TypeCard, ContainerInfoPokemon } from './DetailsCard.styled'
 import axios from 'axios'
 import { typesPokemon } from '../../constants/typesPokemon'
 import { useParams } from 'react-router-dom'
+import ProgressBar from '../ProgressBar/ProgressBar'
 
 export const DetailsCard = () => {
 
@@ -73,40 +74,28 @@ export const DetailsCard = () => {
           borderRadius='12px'
           color='black'
         >
-          <Text
-            fontSize='28px'
-            fontWeight='700'
-            padding='10px 18px'
-
-          >Base Stat</Text>
+          <Text fontSize='28px' fontWeight='700' padding='10px 18px'>Base Stat</Text>
           {cardDetails.stats?.map((stat) => {
             return (
               <>
-                <Grid key={stat.stat.name}
-                  width='307px'
-                  display='grid'
-                  justifyItems='flex-end'
-                  alignItems='center'
-                  gridTemplateColumns='2fr 1fr 2fr'
-                  fontFamily="'Poppins', sans-serif"
-                  fontWeight='400'
-                  padding='0 10px'
-                >
-                  <Text
-                    color='gray.500'
-                    gridColumn='1/2'>{capitalizeFistLetter(stat.stat.name)}</Text>
-                  <Text gridColumn='2/3'>{stat.base_stat}</Text>
-                  <Flex>
-                    <Progress
-                      gridColumn='3/4'
-                      borderRadius='4px'
-                      width='200px'
-                      bg='none'
-                      // bg='black'
-                      colorScheme={stat.base_stat < 50 ? "orange" : stat.base_stat < 80 ? "yellow" : "green"} value={(stat.base_stat + 10)}
-                    />
-                  </Flex>
-                </Grid>
+                <Flex>
+                  <Grid key={stat.stat.name}
+                    width='300px'
+                    display='grid'
+                    justifyItems='flex-end'
+                    alignItems='center'
+                    gridTemplateColumns='50px 50px 150px'
+                    fontFamily="'Poppins', sans-serif"
+                    fontWeight='400'
+                    padding='0 20px'
+                    columnGap='4px'
+                    fontSize='14px'
+                  >
+                    <Text color='gray.500' gridColumn='1/2'>{capitalizeFistLetter(stat.stat.name)}</Text>
+                    <Text justifySelf='flex-end' gridColumn='2/3'>{stat.base_stat}</Text>
+                    <ProgressBar completed={stat.base_stat}></ProgressBar>
+                  </Grid>
+                </Flex>
                 <Flex
                   border='0.5px solid #f0f0f1'
                   margin='0 20px'
@@ -115,22 +104,27 @@ export const DetailsCard = () => {
             )
           })
           }
-          <Flex
-            padding='10px 18px'
-            gap='10px'
+          <Grid
+            width='300px'
+            display='grid'
+            justifyItems='flex-end'
+            alignItems='center'
+            gridTemplateColumns='50px 50px 150px'
+            fontFamily="'Poppins', sans-serif"
+            fontWeight='400'
+            padding='0 20px'
+            columnGap='4px'
+            fontSize='14px'
           >
             <Text
               color='gray.500'
-              fontFamily="'Poppins', sans-serif"
-              fontWeight='400'
-              paddingLeft='30px'
             >Total</Text>
-            <Text>{
+            <Text fontWeight='700'>{
               cardDetails.stats?.reduce((acc, stat) => {
                 return acc + stat.base_stat
               }, 0)
             }</Text>
-          </Flex>
+          </Grid>
           <Flex
             border='0.5px solid #f0f0f1'
             margin='0 20px'
