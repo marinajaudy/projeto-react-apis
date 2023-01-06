@@ -1,4 +1,4 @@
-import { Flex, Image } from '@chakra-ui/react'
+import { Flex, Heading, Image } from '@chakra-ui/react'
 import Modal from 'react-modal'
 import React, { useContext } from 'react'
 import github from '../../assets/logogithub-removebg-preview.png'
@@ -42,15 +42,19 @@ export const ModalContact = () => {
       <Modal isOpen={isOpenContact} onRequestClose={closeModalContact} style={customStyle}>
         <Flex
           justifyContent='center'
-          alignItems='center'
           flexDirection='column'
+          alignItems='center'
+          gap='16px'
           onClick={closeModalContact}
         >
           {
             isOpenContact ?
               <>
-                <a href='https://github.com/marinajaudy'><Image src={github} alt='Github'/></a>
-                <a href='https://www.linkedin.com/in/marina-jaudy/'><Image src={linkedin} alt='Linkedin'/></a>
+                <Heading>Contato:</Heading>
+                <Flex>
+                  <a href='https://github.com/marinajaudy'><Image height='9vh'width='4.8vw' src={github} alt='Github'/></a>
+                  <a href='https://www.linkedin.com/in/marina-jaudy/'><Image height='9vh'width='5vw' src={linkedin} alt='Linkedin'/></a>
+                </Flex>
               </>:
               <></>
           }

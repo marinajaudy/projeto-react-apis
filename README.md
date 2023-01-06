@@ -51,8 +51,6 @@ Os conteúdos principais  a serem utilizados são:
 - Design Systems
 - Estado Global
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GOAL-->
@@ -103,7 +101,7 @@ O objetivo deste projeto criar um site com três páginas usando a [PokeApi - AP
 ### **Deployment**
 
 Versel:
-https://projeto-react-apis-o502j5j2v-marinajaudy.vercel.app/
+https://projeto-react-apis-chi.vercel.app/
 
 <!-- GETTING STARTED -->
 ## Getting Started 

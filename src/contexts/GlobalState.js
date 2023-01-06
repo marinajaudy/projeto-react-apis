@@ -43,7 +43,10 @@ export const GlobalState = () => {
 
   const removePokedex = (pokemon) => {
     const filterDelete = pokedex.filter((poke) => poke.id !== pokemon.id)
-    pokemons.push(pokemon)
+    const newReturnPokemons = [...pokemons.sort((a, b) => {
+      return a.id - b.id
+    }) ]
+    newReturnPokemons.push(pokemon)
     localStorage.setItem('poke', JSON.stringify(pokemons))
     localStorage.setItem('pokedex', JSON.stringify(filterDelete))
     setPokedex(filterDelete)

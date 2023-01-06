@@ -5,7 +5,6 @@ import { PokemonCard } from '../../components/PokemonCard/PokemonCard'
 import { GlobalContext } from '../../contexts/GlobalContext'
 import { ContainerHomePage, PokemonMain } from './HomePage.styles'
 import pokebola from '../../assets/pokebola-go.png'
-
 export const HomePage = () => {
 
   const context = useContext(GlobalContext)
@@ -32,7 +31,7 @@ export const HomePage = () => {
         position='fixed'
         height='100px'
         width='100px'
-        bottom='0px'
+        bottom='2vh'
         right='8vw'
         >
         <Image src={pokebola} alt="Pokebola" onClick={()=>openContact()}/>

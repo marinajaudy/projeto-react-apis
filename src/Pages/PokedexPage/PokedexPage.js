@@ -34,7 +34,7 @@ export const PokedexPage = () => {
         position='fixed'
         height='100px'
         width='100px'
-        bottom='0px'
+        bottom='2vh'
         right='8vw'
         >
         <Image src={pokebola} alt="Pokebola" onClick={()=>openContact()}/>
