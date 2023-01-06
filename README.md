@@ -38,7 +38,7 @@
 <!-- ABOUT THE PROJECT-->
 # **Sobre o Projeto**
 
-[![Product Name Screen Shot][product-screenshot]](./src//assets/ProjetoApiPokedex.gif)
+[![Product Name Screen Shot][product-screenshot]](https://drive.google.com/file/d/135r5aH_B2I5m_buOO5aKZ-xP29CuREN2/view?usp=sharing)
 
 O Projeto React e APIs é um site de pokémons que possui três páginas: Home, Pokedex e Detalhes. O projeto está subdivido em temas de acordo com os conteúdos que estudado durante o Módulo 2 - Frontend no bootcamp da Labenu.
 
