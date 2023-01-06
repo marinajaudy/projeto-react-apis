@@ -5,6 +5,7 @@ import { PokemonCard } from '../../components/PokemonCard/PokemonCard'
 import { GlobalContext } from '../../contexts/GlobalContext'
 import { ContainerHomePage, PokemonMain } from './HomePage.styles'
 import pokebola from '../../assets/pokebola-go.png'
+
 export const HomePage = () => {
 
   const context = useContext(GlobalContext)

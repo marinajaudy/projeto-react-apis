@@ -155,6 +155,7 @@ Marina Jaudy  - marinarrjaudy@hotmail.com
 
 Project Link: [https://github.com/marinajaudy/projeto-react-apis.git](https://github.com/marinajaudy/projeto-react-apis.git)
 <br/>
+
 [![Linkedin](https://img.shields.io/badge/linkedin-%230A66C2.svg?&style=for-the-badge&logo=linkedin&logoColor=white&link=https://www.linkedin.com/in/andrejaques/)](https://www.linkedin.com/in/marina-jaudy)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
