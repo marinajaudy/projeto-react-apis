@@ -14,26 +14,23 @@
   <summary>Menu Conteúdo</summary>
   <ol>
     <li>
-      <a href="#about-the-project">Sobre o Projeto</a>
+      <a href="#sobre-o-projeto">Sobre o Projeto</a>
       <ul>
-        <li><a href="#goal">Objetivo</a></li>
+        <li><a href="#objetivo">Objetivo</a></li>
       </ul>
-	      <li> <a href='#requirements'>Requisitos</a></li>
+	      <li> <a href='#requisitos'>Requisitos</a></li>
     </li>
     <li>
-      <a href="#build-with">Construido com</a>
+      <a href="#construido-com">Construido com</a>
       <ul>
-        <li><a href="#deployment"> </a>Deployment</li>
+        <li><a href="#deployment">Deployment</a></li>
         <li><a href="#getting-started">Getting Started</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Uso</a></li>
+    <li><a href="#uso">Uso</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
-	<li><a href="#projetoLabenu">BootCamp´s task</a></li>
+    <li><a href="#contato">Contato</a></li>
+    <li><a href="#agradecimentos">Agradecimentos</a></li>
   </ol>
 </details>
 
@@ -128,7 +125,7 @@ Para ter uma copia local, siga os passos abaixo:
    ```sh
    npm install
    ```
-   
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- USAGE -->
